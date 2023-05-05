@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scripting My Story</title>
+  <link rel="stylesheet" href="styles.css">
+<link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/2d46e81787.js">
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600;900&display=swap" rel="stylesheet">
+</head>
+<body class="parallax">
+
+  <section>
+    <nav id="nav-bar">
+      <a href="#" id="icon" class="nav-link">Icon</a>
+      <a href="#characters" class="nav-link">Characters</a>
+      <a href="#settings" class="nav-link">Settings</a>
+      <a href="#" class="nav-link">?</a>
+      <a href="#" class="nav-link">?</a>
+    </nav>
+  </section>
+
+  <section id="notes" class="notes-section">
+    <h1 id="notes-header">Scripting My Story</h1>
+  </section>
+
+  <section>
+    <form>
+      <fieldset>
+        <section id="new-note">
+          <div id="new-note-heading">
+            <h2>New Entry</h2>
+          </div>
+          <div>
+            <select id="category-dropdown" name="characters" class="form-control" required>
+              <option value="disabled selected value">Select a character</option>
+              <option>New Character</option>
+              <option>Character1</option>
+              <option>Character2</option>
+              <option>Character3</option>
+              <option>Character4</option>
+              <option>Character5</option>
+              </select>
+          </div>
+
+          <div class="new-notes form-control">
+            <div>
+              <textarea id="new-dialogue-entry"  class="inputTextArea"  name="new-dialogue-entry"  placeholder="Enter dialogue here" ></textarea>
+            </div>
+            <div>
+              <textarea id="new-description-entry"  class="inputTextArea"  name="new-description-entry"  placeholder="Enter description here" ></textarea>
+            </div>
+            <div>
+              <textarea id="new-setting-entry"  class="inputTextArea"  name="new-setting-entry"  placeholder="Enter setting here" ></textarea>
+            </div>
+            <div>
+              <textarea id="new-character-entry"  class="inputTextArea" name="new-character-entry"  placeholder="Enter new character here" ></textarea>
+            </div>
+          </div>
+
+          <div id="tabs">
+            <button type="button" id="add-dialogue-button" class="add-to-script-button" onclick='displayTextArea(0)'>Dialogue</button>
+            <button type="button" id="add-description-button" class="add-to-script-button" onclick='displayTextArea(1)' )>Description </button>
+            <button type="button" id="add-setting-button" class="add-to-script-button" onclick='displayTextArea(2)' )>Setting</button>
+            <button type="button" id="add-newCharacterInfo-button" class="add-to-script-button" onclick='displayTextArea(3)'>New Character</button>
+          </div>
+
+          <!--              <div id="tabs">
+               <ul>
+            <li type="button" id="add-dialogue-button" class="add-to-script-button" onclick='displayTextArea(0)'>Dialogue</li>
+            <li type="button" id="add-description-button" class="add-to-script-button" onclick='displayTextArea(1)')>Description </li>
+            <li type="button" id="add-setting-button" class="add-to-script-button" onclick='displayTextArea(2)')>Setting</li>
+            <li type="button" id="add-newCharacterInfo-button" class="add-to-script-button" onclick='displayTextArea(3)'>New Character</li>
+           </ul>
+                 </div> -->
+
+          <div class="form-group">
+            <p class="alert"></p>
+            <button type="submit" id="add-note-button" class="add-note-button" onclick=("addNote()")>Add to Script</button>
+
+          </div>
+
+      </fieldset>
+    </form>
+  </section>
+
+  <section id="notes">
+    <div class="note-items">
+
+      <a id="notes" class="note-link" href="" target="_blank">
+        <h3 id="note-cat-title">Story Title/Section/Chapter/Etc</h3>
+      </a> <br>
+
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="delete-edit-buttons">
+        <button type="button" id="delete-btn">Delete Entry</button>
+        <button type="button" id="edit-btn">Edit Entry</button>
+      </div>
+    </div>
+  </section>
+<script src="app.js">
+</script>
+</body>
+</html>
