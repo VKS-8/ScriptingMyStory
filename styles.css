@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background: none;
+}
+
 :root {
  --border-radius: 15px;
 }
@@ -12,21 +16,37 @@
 .parallax {
   position: relative;
   content: "";
-  background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true");
+  /* background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true"); */
   z-index: 3;
   min-height: 750px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  }
+}
 
   parallax1 {
-
-  }
+  position: relative;
+  content: "";
+  background-image: url("/images/aaron-burden-6jYoil2GhVk-unsplash.jpg");
+  z-index: 5;
+  min-height: 750px;
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
   parallax2 {
-
+  position: relative;
+  content: "";
+  background-image: url("/images/aaron-burden-6jYoil2GhVk-unsplash.jpg");
+  z-index: 7;
+  min-height: 750px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
   }
 
 
@@ -140,13 +160,13 @@ h2 {
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.75), 0 6px 15px 0 rgba(0, 0, 0, 1);
 }
 
-.form-control
+/* .form-control */
 
 .add-to-script-button {
 /*   position: relative; */
-  width: 5rem;
-  height: 5rem;
-  border-color: #34b1eb; /* Light blue */
+  width: 6rem;
+  height: 6rem;
+  border: 3px solid #34b1eb; /* Light blue */
   border-radius: 50%;
   margin: 1rem;
   padding: 0;
