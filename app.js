@@ -68,6 +68,7 @@ transitionTextBox();
 
 function transitionTextBox() {
   const triggerBottom = window.innerHeight / 5 * 4;
+  const textBoxes = document.querySelectorAll('.transitionBox');
 
   textBoxes.forEach(textBox => {
     const textBoxTop = textBox.getBoundingClientRect().top;

@@ -6,7 +6,7 @@
 }
 
 html {
-  background: none;
+  z-index: -100;
 }
 
 :root {
@@ -22,10 +22,10 @@ html {
 
 }
 
-.parallax {
+ .parallax {
   position: relative;
   content: "";
-  /* background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true"); */
+  background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true");
   z-index: -5;
   min-height: 750px;
   background-attachment: fixed;
@@ -34,13 +34,16 @@ html {
   background-size: cover;
 }
 
-  parallax1 {
+  .parallax1 {
   background-image: url("/images/aaron-burden-6jYoil2GhVk-unsplash.jpg");
-  transform-style: preserve-3d;
+  /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
+  transform: translateZ(-10px) scale(2);
 }
 
-  parallax2 {
+  .parallax2 {
   background-image: url("/images/aaron-burden-6jYoil2GhVk-unsplash.jpg");
+  /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
+  transform: translateZ(-5px) scale(1.5);
   }
 
   .parallax1, .parallax2 {
@@ -48,7 +51,6 @@ html {
     height: 100%;
     width: 100%;
     object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
-    z-index: -1;
   }
 
 
