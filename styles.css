@@ -3,15 +3,15 @@
 }
 
 :root {
- -- border-radius: 15px;
+ --border-radius: 15px;
 }
 
 .parallax {
   position: relative;
-  content="";
+  content: "";
   background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true");
   z-index: 3;
-  min-height; 750px;
+  min-height: 750px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -150,12 +150,12 @@ h2 {
 }
 
 /* #tabs {
-  position: relative;
-  margin-top: -0.5rem;
-  margin-left: -0.5rem;
-  z-index:-3;
-  /*background: #c6e4f7; */
-} */
+*  position: relative;
+*  margin-top: -0.5rem;
+*  margin-left: -0.5rem;
+*  z-index:-3;
+*  /*background: #c6e4f7; */
+/*} */
 
   .add-to-script-button:hover {
   background: #c6e4f7; /*Not working---Why?*/
@@ -186,7 +186,7 @@ fieldset {
 
 #add-note-button {
   display: flex;
-  align-item: center;
+  align-items: center;
   margin: 0 auto;
   font-family: Optima, sans-serif;
   font-size: 1rem;
@@ -246,7 +246,7 @@ textarea {
 
 #category-dropdown {
   display: flex;
-  align-item: center;
+  align-items: center;
   font-size: 1rem;
   line-height: 1.5rem;
   letter-spacing: 0.05rem;
