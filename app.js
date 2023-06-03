@@ -1,14 +1,14 @@
 //welll.....it looks easier, but....
 
-const inputTextArea = document.getElementsByClassName('inputTextArea');
-console.log(inputTextArea);
+// const inputTextArea = document.getElementsByClassName('inputTextArea');
+// console.log(inputTextArea);
 
-function displayTextArea(index) {
-  for (let i = 0; i < inputTextArea.length; i++) {
-    inputTextArea[i].style.display = "none";
-  }
-  inputTextArea[index].style.display = "block";
-}
+// function displayTextArea(index) {
+//   for (let i = 0; i < inputTextArea.length; i++) {
+//     inputTextArea[i].style.display = "none";
+//   }
+//   inputTextArea[index].style.display = "block";
+// }
 
 //sourced from
 //http://www.javascriptkit.com/javatutors/scrolling-html-bookmark-javascript.shtml
@@ -35,22 +35,48 @@ function displayTextArea(index) {
 //orignially found on stackoverflow
 //https://stackoverflow.com/questions/3163615/how-to-scroll-an-html-page-to-a-given-anchor#:~:text=The%20easiest%20way%20to%20to,your%20HTML%20navigation%20use%20%23NameOfTheSection%20.&text=This%20CSS%20method%20works%20great%20for%20me%20and%20is%20super%20elegant!
 
-function ScrollTo(name) {
-  //init thread
-  ScrollToResolver(document.getElementById(name));
-}
+// function ScrollTo(name) {
+//   //init thread
+//   ScrollToResolver(document.getElementById(name));
+// }
 
-function ScrollToResolver(elem) {
-  var jump = parseInt(elem.getBoundingClientRect().top * .2);
-  document.body.scrollTop += jump;
-  document.documentElement.scrollTop += jump;
-  //lastjump detects anchor unreachable, also manual scrolling to cancel animation if scroll > jump
-  if (!elem.lastjump || elem.lastjump > Math.abs(jump)) {
-    elem.lastjump = Math.abs(jump);
-    setTimeout(function() {
-      ScrollToResolver(elem);
-    }, "100");
-  } else {
-    elem.lastjump = null;
-  }
+// function ScrollToResolver(elem) {
+//   var jump = parseInt(elem.getBoundingClientRect().top * .2);
+//   document.body.scrollTop += jump;
+//   document.documentElement.scrollTop += jump;
+//   //lastjump detects anchor unreachable, also manual scrolling to cancel animation if scroll > jump
+//   if (!elem.lastjump || elem.lastjump > Math.abs(jump)) {
+//     elem.lastjump = Math.abs(jump);
+//     setTimeout(function() {
+//       ScrollToResolver(elem);
+//     }, "100");
+//   } else {
+//     elem.lastjump = null;
+//   }
+// }
+
+//Code sourced from:
+// 50 Projects In 50 Days - HTML, CSS & JS - 6 Scroll Animation || By Frontend Genius || #html #css #js
+// https://www.youtube.com/watch?v=Yuc0UcHyFXc
+
+const inputTextArea = document.querySelectorAll('inputTextArea');
+console.log(inputTextArea);
+
+window.addEventListener('scroll', transitionTextBox);
+
+transitionTextBox();
+
+function transitionTextBox() {
+  const triggerBottom = window.innerHeight / 5 * 4;
+
+  textBoxes.forEach(textBox => {
+    const textBoxTop = textBox.getBoundingClientRect().top;
+
+    if(textBoxTop < triggerBottom) {
+      textBox.classList.add('transition-box')
+    } else {
+      textBox.classList.remove('transition-box');
+    }
+
+  });
 }

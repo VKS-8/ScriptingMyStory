@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600;900&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -16,6 +19,14 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  }
+
+  parallax1 {
+
+  }
+
+  parallax2 {
+
   }
 
 
@@ -52,13 +63,6 @@ div #nav-bar #nav-bar {
 #icon:hover {
   background: linen;
   color: black;
-}
-
-/*adds spacing between nav links*/
-.nav-link {
-  padding: 0 1rem;
-
-  border: px solid red;
 }
 
 .nav-link {
@@ -136,28 +140,23 @@ h2 {
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.75), 0 6px 15px 0 rgba(0, 0, 0, 1);
 }
 
+.form-control
+
 .add-to-script-button {
 /*   position: relative; */
- border-color: #34b1eb; /* Light blue */
-  border-top: none;
-   border-bottom-right-radius: 5px;
-   border-bottom-left-radius: 5px;
-  margin: 0;
-  padding: 1rem;
+  width: 5rem;
+  height: 5rem;
+  border-color: #34b1eb; /* Light blue */
+  border-radius: 50%;
+  margin: 1rem;
+  padding: 0;
   z-index: -1;
   cursor: pointer;
-
+  font-size: 0.5rem;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* #tabs {
-*  position: relative;
-*  margin-top: -0.5rem;
-*  margin-left: -0.5rem;
-*  z-index:-3;
-*  /*background: #c6e4f7; */
-/*} */
-
-  .add-to-script-button:hover {
+.add-to-script-button:hover {
   background: #c6e4f7; /*Not working---Why?*/
 }
 
@@ -202,8 +201,6 @@ fieldset {
   background: #c6e4f7;
 }
 
-
-
 h3 {
   margin: 1rem 0;
   padding: 1rem;
@@ -242,9 +239,10 @@ textarea {
   padding: 0.5rem;
   border-radius: 10px;
   margin: 0;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
-#category-dropdown {
+#characterSelectDropdown {
   display: flex;
   align-items: center;
   font-size: 1rem;
@@ -253,6 +251,24 @@ textarea {
   padding: 0.5rem;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+/*Code sourced from:
+* 50 Projects In 50 Days - HTML, CSS & JS - 6 Scroll Animation || By Frontend Genius || #html #css #js
+* https://www.youtube.com/watch?v=Yuc0UcHyFXc */
+
+.transition-box {
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+}
+
+.transition-box:nth-of-type(even) {
+  transform: translate(100%);
+}
+
+.transition-box.transitionTextBox {
+  transform: translateX(0);
 }
 
 @media screen and (max-width: 410px) {

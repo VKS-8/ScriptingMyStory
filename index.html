@@ -11,12 +11,8 @@
   </script>
   <script defer src="app.js">
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600;900&display=swap" rel="stylesheet">
 </head>
-<body class="parallax">
+<body class="parallax parallax1 parallax2">
 
   <section>
     <nav id="nav-bar">
@@ -42,7 +38,7 @@
           </div>
           <!-- Select a character to write new note about or create new character -->
           <div>
-            <select id="category-dropdown" name="characters" class="form-control" required>
+            <select id="characterSelectDropdown" name="characters" class="form-control" required>
               <option value="disabled selected value">Select a character</option>
               <option>New Character</option>
               <option>Character1</option>
@@ -57,7 +53,7 @@
             <div>
               <textarea
                 id="new-dialogue-entry"
-                class="inputTextArea"
+                class="inputTextArea transiton-box"
                 name="new-dialogue-entry"
                 placeholder="Enter dialogue here" >
               </textarea>
@@ -65,7 +61,7 @@
             <div>
               <textarea
                 id="new-description-entry"
-                class="inputTextArea"
+                class="inputTextArea transiton-box"
                 name="new-description-entry"
                 placeholder="Enter description here" >
               </textarea>
@@ -73,7 +69,7 @@
             <div>
               <textarea
                 id="new-setting-entry"
-                class="inputTextArea"
+                class="inputTextArea transiton-box"
                 name="new-setting-entry"
                 placeholder="Enter setting here">
               </textarea>
@@ -81,7 +77,7 @@
             <div>
               <textarea
                 id="new-character-entry"
-                class="inputTextArea"
+                class="inputTextArea transiton-box"
                 name="new-character-entry"
                 placeholder="Enter new character here">
               </textarea>
