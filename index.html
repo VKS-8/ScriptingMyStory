@@ -13,9 +13,12 @@
   </script>
 </head>
 <body class="parallax">
-  <section class="parallax1"></section>
-  <section class="parallax2"></section>
+  <div class="wrapper">
+    <section class="parallax1"></section>
+    <section class="parallax2"></section>
+  </div>
 
+  <!-- Nav -->
   <section>
     <nav id="nav-bar">
       <a href="#" id="icon" class="nav-link">Icon</a>
@@ -26,6 +29,7 @@
     </nav>
   </section>
 
+  <!-- Hero Header -->
   <section id="notes" class="notes-section">
     <h1 id="notes-header">Scripting My Story</h1>
   </section>
@@ -54,6 +58,14 @@
           <div class="new-notes form-control">
             <div>
               <textarea
+                id="new-character-entry"
+                class="inputTextArea transiton-box"
+                name="new-character-entry"
+                placeholder="Enter new character here">
+              </textarea>
+            </div>
+            <div>
+              <textarea
                 id="new-dialogue-entry"
                 class="inputTextArea transiton-box"
                 name="new-dialogue-entry"
@@ -76,22 +88,14 @@
                 placeholder="Enter setting here">
               </textarea>
             </div>
-            <div>
-              <textarea
-                id="new-character-entry"
-                class="inputTextArea transiton-box"
-                name="new-character-entry"
-                placeholder="Enter new character here">
-              </textarea>
-            </div>
           </div>
           <!-- Tabs to select each category to add information to -->
-          <div id="tabs">
+          <div id="categories">
             <button type="button"
-              id="add-dialogue-button"
+              id="add-new-character-button"
               class="add-to-script-button"
-              onclick='displayTextArea(0)'>
-                Dialogue
+              onclick='displayTextArea(3)'>
+                New Character
             </button>
             <button type="button"
               id="add-desciption-button"
@@ -106,10 +110,10 @@
                 Setting
             </button>
             <button type="button"
-              id="add-new-character-button"
+              id="add-dialogue-button"
               class="add-to-script-button"
-              onclick='displayTextArea(3)'>
-                New Character
+              onclick='displayTextArea(0)'>
+                Dialogue
             </button>
           </div>
 

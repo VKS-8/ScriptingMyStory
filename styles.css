@@ -12,12 +12,21 @@ html {
 :root {
  --border-radius: 15px;
 }
+ /*Code sourced from this YouTube video
+  https://www.youtube.com/watch?v=mxHoPYFsTuk  4:50*/
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+
+}
 
 .parallax {
   position: relative;
   content: "";
   /* background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true"); */
-  z-index: 3;
+  z-index: -5;
   min-height: 750px;
   background-attachment: fixed;
   background-position: center;
@@ -26,27 +35,20 @@ html {
 }
 
   parallax1 {
-  position: relative;
-  content: "";
   background-image: url("/images/aaron-burden-6jYoil2GhVk-unsplash.jpg");
-  z-index: 5;
-  min-height: 750px;
-  background-attachment: fixed;
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
+  transform-style: preserve-3d;
 }
 
   parallax2 {
-  position: relative;
-  content: "";
   background-image: url("/images/aaron-burden-6jYoil2GhVk-unsplash.jpg");
-  z-index: 7;
-  min-height: 750px;
-  background-attachment: fixed;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover;
+  }
+
+  .parallax1, .parallax2 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
+    z-index: -1;
   }
 
 
