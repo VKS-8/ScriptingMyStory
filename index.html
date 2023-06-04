@@ -12,10 +12,10 @@
   <script defer src="app.js">
   </script>
 </head>
-<body class="parallax">
+<body class="parallaxBackground">
   <div class="wrapper">
-    <section class="parallax1"></section>
-    <section class="parallax2"></section>
+    <section class="middleground"></section>
+    <section class="foreground"></section>
   </div>
 
   <!-- Nav -->
@@ -56,84 +56,34 @@
           </div>
           <!-- Text area to write new note information for each category -->
           <div class="new-notes form-control">
-            <div>
-              <textarea
-                id="new-character-entry"
-                class="inputTextArea transitonBox"
-                name="new-character-entry"
-                placeholder="Enter new character here">
-              </textarea>
-            </div>
-            <div>
-              <textarea
-                id="newDialogueEntry"
-                class="inputTextArea transitonBox"
-                name="new-dialogue-entry"
-                placeholder="Enter dialogue here" >
-              </textarea>
-            </div>
-            <div>
-              <textarea
-                id="new-description-entry"
-                class="inputTextArea transitonBox"
-                name="new-description-entry"
-                placeholder="Enter description here" >
-              </textarea>
-            </div>
-            <div>
-              <textarea
-                id="new-setting-entry"
-                class="inputTextArea transitonBox"
-                name="new-setting-entry"
-                placeholder="Enter setting here">
-              </textarea>
-            </div>
+            <textarea
+              id="new-entry"
+              class="inputTextArea"
+              name="new-entry"
+              placeholder="Enter new entry then click appropriate button to add to the correct category">
+            </textarea>
           </div>
-          <!-- Tabs to select each category to add information to -->
+          <!-- Buttons append textArea text to select category -->
           <div id="categories">
             <button type="button"
               id="add-new-character-button"
-              class="add-to-script-button"
-              onclick='displayTextArea(0)'>
+              class="add-to-script-button">
                 New Character
             </button>
             <button type="button"
               id="add-desciption-button"
-              class="add-to-script-button"
-              onclick='displayTextArea(1)'>
+              class="add-to-script-button">
                 Description
             </button>
             <button type="button"
               id="add-setting-button"
-              class="add-to-script-button"
-              onclick='displayTextArea(2)'>
+              class="add-to-script-button">
                 Setting
             </button>
             <button type="button"
               id="add-dialogue-button"
-              class="add-to-script-button"
-              onclick='displayTextArea(3)'>
+              class="add-to-script-button">
                 Dialogue
-            </button>
-          </div>
-
-                       <!-- <div id="tabs">
-               <ul>
-            <li type="button" id="add-dialogue-button" class="add-to-script-button" onclick='displayTextArea(0)'>Dialogue</li>
-            <li type="button" id="add-description-button" class="add-to-script-button" onclick='displayTextArea(1)')>Description </li>
-            <li type="button" id="add-setting-button" class="add-to-script-button" onclick='displayTextArea(2)')>Setting</li>
-            <li type="button" id="add-newCharacterInfo-button" class="add-to-script-button" onclick='displayTextArea(3)'>New Character</li>
-           </ul>
-                 </div> -->
-
-          <div class="form-group">
-            <p class="alert"></p>
-            <button
-              type="submit"
-              id="add-note-button"
-              class="add-note-button"
-              onclick=(addNote())>
-                Add to Script
             </button>
           </div>
         </section>

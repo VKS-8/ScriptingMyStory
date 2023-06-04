@@ -3,6 +3,9 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 html {
@@ -22,7 +25,7 @@ html {
 
 }
 
- .parallax {
+.parallaxBackground {
   position: relative;
   content: "";
   background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true");
@@ -34,22 +37,27 @@ html {
   background-size: cover;
 }
 
-  .parallax1 {
-  background-image: url("/images/aaron-burden-6jYoil2GhVk-unsplash.jpg");
+  .middleground {
+  background-image: url("/images/transparentBkgrd/aaron-burden-6jYoil2GhVk-unsplash-transparent.jpg");
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
   transform: translateZ(-10px) scale(2);
-}
+} */
 
-  .parallax2 {
-  background-image: url("/images/aaron-burden-6jYoil2GhVk-unsplash.jpg");
+  .foreground {
+  background-image: url("/images/transparentBkgrd/brian-lundquist-Gp-g69K-pgs-unsplash-transparent-background.jpg");
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
   transform: translateZ(-5px) scale(1.5);
   }
 
-  .parallax1, .parallax2 {
+  .middleground, .foreground {
     position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
     height: 100%;
-    width: 100%;
+    background-attachment: scroll;
+    background-position: center center;
     object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
   }
 
