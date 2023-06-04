@@ -81,12 +81,12 @@ header {
 
   .foreground {
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
-  transform: translateZ(-10px) scale(2.5);
+  transform: translateZ(-20px) scale(3.5);
   }
 
   .middleground {
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
-  transform: translateZ(-40px) scale(6);
+  transform: translateZ(-30px) scale(6);
   top: -55rem;
   }
 
@@ -99,6 +99,16 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
+  }
+
+  .hero-pTag {
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    font-size: 10rem;
+    margin: -125rem auto;
+    text-align: center;
+    transform: translateZ(-2px) scale(1);
   }
 
 div #nav-bar #nav-bar {
