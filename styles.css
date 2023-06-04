@@ -205,11 +205,15 @@ h2 {
 }
 
 .add-to-script-button:hover {
-  background: #c6e4f7; /*Not working---Why?*/
+  background: #c6e4f7;
 }
 
 fieldset {
   border: none;
+}
+
+#note-cat-title {
+  margin: 0 10rem; /*Not working*/
 }
 
 #delete-btn,
@@ -228,24 +232,6 @@ fieldset {
 
 #delete-btn:hover,
 #edit-btn:hover {
-  background: #c6e4f7;
-}
-
-#add-note-button {
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  font-family: Optima, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.05rem;
-  border: 2px solid red;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
-#add-note-button:hover {
   background: #c6e4f7;
 }
 
