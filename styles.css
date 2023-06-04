@@ -62,7 +62,6 @@ header {
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.75), 0 6px 10px 0 rgba(0, 0, 0, 1);
-  /* scroll-behavior: smooth; */
   transform: translateZ(-4px) scale(3);
 }
 
