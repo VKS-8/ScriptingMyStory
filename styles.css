@@ -33,22 +33,37 @@ html {
   https://www.youtube.com/watch?v=mxHoPYFsTuk  4:50*/
 .wrapper {
   height: 250vh;
-  overflow: hidden;
-  perspective: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 8px;
+  scroll-behavior: smooth;
+
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+  /* scroll-behavior: smooth; */
 }
 
 #heroHeader {
   position: absolute;
   width: 100%;
-  transform: translateZ(-1px);
   background: #f7f1d0;
   font-size: 3rem;
   text-align: center;
   border: 2px solid red;
-  margin: 100rem 1rem 0;
+  margin: 0 1rem 0; /*--- Set header at base of container to prepare for scroll effect---*/
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.75), 0 6px 10px 0 rgba(0, 0, 0, 1);
+  /* scroll-behavior: smooth; */
+  transform: translateZ(-4px) scale(3);
 }
 
 
@@ -56,7 +71,7 @@ html {
   position: relative;
   content: "";
   background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true");
-  transform: translateZ(-10px);
+  transform: translateZ(-50px);
   min-height: 750px;
   background-attachment: fixed;
   background-position: center;
@@ -65,28 +80,25 @@ html {
 }
 
   .foreground {
-   background-image: url("/images/transparentBkgrd/aaron-burden-6jYoil2GhVk-unsplash-transparent-edgeSmudge.png");
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
-  transform: translateZ(-5px) scale(2);
-}
+  transform: translateZ(-10px) scale(2.5);
+  }
 
   .middleground {
-  background-image: url("/images/transparentBkgrd/james-todd-E9wD5lwKveM-unsplash-transparent-background-edgeSmudge.png");
-  box-shadow: 12px 14px 15px rgba(0, 0, 0, 0.3);
-  border-radius: 30px;
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
-  transform: translateZ(-7px) scale(1.5);
+  transform: translateZ(-40px) scale(6);
+  top: -55rem;
   }
 
   .middleground, .foreground {
     position: absolute;
-    margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
+    background-attachment: scroll;
     background-repeat: no-repeat;
-    background-position: center center;
-    object-fit: contain; /*------Gives correct aspect ration no matter screen size-----*/
+    background-position: center;
+    object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
   }
 
 div #nav-bar #nav-bar {
