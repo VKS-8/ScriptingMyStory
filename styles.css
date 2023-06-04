@@ -29,7 +29,7 @@ html {
   position: relative;
   content: "";
   background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true");
-  z-index: -5;
+  transform: translateZ(-10px);
   min-height: 750px;
   background-attachment: fixed;
   background-position: center;
@@ -38,29 +38,33 @@ html {
 }
 
   .middleground {
+  top: 2rem;
+  left: 2rem;
+  background-attachment: scroll;
   background-image: url("/images/transparentBkgrd/aaron-burden-6jYoil2GhVk-unsplash-transparent.jpg");
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
-  transform: translateZ(-10px) scale(2);
-} */
+  transform: translateZ(-7px) scale(2);
+}
 
   .foreground {
-  background-image: url("/images/transparentBkgrd/brian-lundquist-Gp-g69K-pgs-unsplash-transparent-background.jpg");
+  top: 10rem;
+  left: 2rem;
+  /* background-image: url("/images/transparentBkgrd/brian-lundquist-Gp-g69K-pgs-unsplash-transparent-background.jpg"); */
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
   transform: translateZ(-5px) scale(1.5);
   }
 
   .middleground, .foreground {
     position: absolute;
-    top: 0;
-    left: 0;
     margin: 0;
     padding: 0;
     height: 100%;
-    background-attachment: scroll;
-    background-position: center center;
-    object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
+    width: 100%;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain; /*------Gives correct aspect ration no matter screen size-----*/
   }
-
 
 div #nav-bar #nav-bar {
   display: flex;
