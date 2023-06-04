@@ -40,7 +40,7 @@ html {
   top: 0;
   left: 0;
   background-attachment: scroll;
-  background-image: url("/images/transparentBkgrd/aaron-burden-6jYoil2GhVk-unsplash-transparent.png");
+  background-image: url("/images/transparentBkgrd/aaron-burden-6jYoil2GhVk-unsplash-transparent-edgeSmudge.png");
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
   transform: translateZ(-7px) scale(2);
 }
@@ -48,7 +48,7 @@ html {
   .foreground {
   top: 10rem;
   left: 2rem;
-  /* background-image: url("/images/transparentBkgrd/brian-lundquist-Gp-g69K-pgs-unsplash-transparent-background.jpg"); */
+  background-image: url("/images/transparentBkgrd/a");
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
   transform: translateZ(-5px) scale(1.5);
   }
