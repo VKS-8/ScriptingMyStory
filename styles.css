@@ -19,8 +19,7 @@ html {
   https://www.youtube.com/watch?v=mxHoPYFsTuk  4:50*/
 .wrapper {
   height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   perspective: 10px;
 
 }
@@ -38,10 +37,10 @@ html {
 }
 
   .middleground {
-  top: 2rem;
-  left: 2rem;
+  top: 0;
+  left: 0;
   background-attachment: scroll;
-  background-image: url("/images/transparentBkgrd/aaron-burden-6jYoil2GhVk-unsplash-transparent.jpg");
+  background-image: url("/images/transparentBkgrd/aaron-burden-6jYoil2GhVk-unsplash-transparent.png");
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
   transform: translateZ(-7px) scale(2);
 }
@@ -60,8 +59,6 @@ html {
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
     background-repeat: no-repeat;
     background-position: center;
     object-fit: contain; /*------Gives correct aspect ration no matter screen size-----*/
