@@ -59,7 +59,7 @@
 // 50 Projects In 50 Days - HTML, CSS & JS - 6 Scroll Animation || By Frontend Genius || #html #css #js
 // https://www.youtube.com/watch?v=Yuc0UcHyFXc
 
-const inputTextArea = document.querySelectorAll('inputTextArea');
+const inputTextArea = document.querySelector('.inputTextArea');
 console.log(inputTextArea);
 
 window.addEventListener('scroll', transitionTextBox);
@@ -67,8 +67,8 @@ window.addEventListener('scroll', transitionTextBox);
 transitionTextBox();
 
 function transitionTextBox() {
-  const triggerBottom = window.innerHeight / 5 * 4;
-  const textBoxes = document.querySelectorAll('.transitionBox');
+  const triggerBottom = window.innerHeight / 5 * 1;
+  const textBoxes = document.querySelectorAll('.inputTextArea');
 
   textBoxes.forEach(textBox => {
     const textBoxTop = textBox.getBoundingClientRect().top;
@@ -80,4 +80,26 @@ function transitionTextBox() {
     }
 
   });
+}
+
+// My attempt to rewrite this code for the wrapper
+
+const wrapper = document.querySelector('.wrapper');
+console.log(wrapper);
+
+window.addEventListener('scroll', transitionWrapper);
+
+transitionWrapper();
+
+function transitionWrapper() {
+  const triggerBottom = window.innerHeight / 5 * 4;
+  const wrapper = document.querySelector('.wrapper');
+
+  const wrapperTop = wrapper.getBoundingClientRect().top;
+
+  if(wrapperTop < triggerBottom) {
+    wrapper.classList.add('transitionWrapper')
+  } else {
+    textBox.classList.remove('transitionWrapper');
+  }
 }

@@ -3,13 +3,15 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   border: none;
+  max-width: 1600px;
 }
 
 html {
   z-index: -100;
+  max-width: 1600px;
 
   /*Code sourced form Stackoverflow:display:
   https://stackoverflow.com/questions/43186015/css-hide-scroll-bar-but-have-element-scrollable*/
@@ -32,12 +34,12 @@ html {
 /*Code sourced from this YouTube video
   https://www.youtube.com/watch?v=mxHoPYFsTuk  4:50*/
 .wrapper {
-  height: 250vh;
+  height: 225vh;
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 8px;
   scroll-behavior: smooth;
-
+  margin: -50rem auto;
 }
 
 header {
@@ -48,21 +50,16 @@ header {
   height: 100%;
   transform-style: preserve-3d;
   z-index: -1;
-  /* scroll-behavior: smooth; */
 }
 
 #heroHeader {
-  position: absolute;
+  position: relative;
   width: 100%;
-  background: #f7f1d0;
-  font-size: 3rem;
-  text-align: center;
-  border: 2px solid red;
-  margin: 0 1rem 0; /*--- Set header at base of container to prepare for scroll effect---*/
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.75), 0 6px 10px 0 rgba(0, 0, 0, 1);
-  transform: translateZ(-4px) scale(3);
+  color: #fff;
+  font-size: 10rem;
+  margin: 100rem auto;
+  transform: translateZ(-10px) scale(1);
+  text-shadow: 0 0 5px #000;
 }
 
 
@@ -70,8 +67,9 @@ header {
   position: relative;
   content: "";
   background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true");
-  transform: translateZ(-50px);
+  transform: translateZ(-100px);
   min-height: 750px;
+  max-width: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -80,13 +78,13 @@ header {
 
   .foreground {
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
-  transform: translateZ(-20px) scale(3.5);
+  transform: translateZ(-10px) scale(2.5);
   }
 
   .middleground {
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
   transform: translateZ(-30px) scale(6);
-  top: -55rem;
+  top: -75rem;
   }
 
   .middleground, .foreground {
@@ -100,17 +98,8 @@ header {
     object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
   }
 
-  .hero-pTag {
-    position: absolute;
-    width: 100%;
-    color: #fff;
-    font-size: 10rem;
-    margin: -125rem auto;
-    text-align: center;
-    transform: translateZ(-2px) scale(1);
-  }
+div #nav-bar {
 
-div #nav-bar #nav-bar {
   display: flex;
   flex-direction: row;
 
@@ -122,13 +111,13 @@ div #nav-bar #nav-bar {
 }
 
 #nav-bar {
-  display: flex;
-  width: 100%;
-  height: minmax(40vh);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  display: flex;
+  width: 100%;
+  height: minmax(40vh);
+  z-index: 5;
 }
 
 #icon {
@@ -181,8 +170,22 @@ h2 {
   letter-spacing: 0.15rem;
 }
 
+.notesHeading {
+  position: absolute;
+  width: 100%;
+  background: #f7f1d0;
+  font-size: 3rem;
+  text-align: center;
+  border: 2px solid red;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.75), 0 6px 10px 0 rgba(0, 0, 0, 1);
+  }
+
 #new-note {
   text-align: center; /*centers the project-items*/
+  margin: 10rem auto;
 }
 
 .note-items {
@@ -278,21 +281,27 @@ p {
 }
 
 .inputTextArea {
-  display: none;
-  font-size: 1rem;
+  display: visible;
+  width: 80%;
+  height: 50vh;
+  margin: 5rem auto;
+  padding: 2rem;
+  font-size: 2rem;
   line-height: 1.5rem;
   letter-spacing: 0.05rem;
-  margin: 0.5rem auto;
+
 }
 
 textarea {
   display: relative;
   top: 0;
   width: 100%;
-  height: 35vh;
-  padding: 0.5rem;
-  border-radius: 10px;
+  height: 50vh;
   margin: 0;
+  padding: 0.5rem;
+  color: #808080;
+  border-radius: 10px;
+
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -312,13 +321,29 @@ textarea {
 * 50 Projects In 50 Days - HTML, CSS & JS - 6 Scroll Animation || By Frontend Genius || #html #css #js
 * https://www.youtube.com/watch?v=Yuc0UcHyFXc */
 
-.transition-box {
+/* This will eventually remove the parallax wrapper at a specific scroll point*/
+.transitionWrapper {
+  transform: translateY(150%);
+  transition: transform 50s ease;
+}
+
+/* .transition-box:nth-of-type(even) {
   transform: translateX(100%);
-  transition: transform 0.4s ease;
+} */
+
+.transitionWrapper.transitionTextBox {
+  transform: translateX(0);
+}
+
+/* This transitions the text area off the screen */
+
+.transition-box {
+  transform: translateX(150%);
+  transition: transform 1s ease;
 }
 
 .transition-box:nth-of-type(even) {
-  transform: translate(100%);
+  transform: translateX(100%);
 }
 
 .transition-box.transitionTextBox {
