@@ -67,7 +67,7 @@ window.addEventListener('scroll', transitionTextBox);
 transitionTextBox();
 
 function transitionTextBox() {
-  const triggerBottom = window.innerHeight / 5 * 1;
+  const triggerBottom = window.innerHeight / 10;
   const textBoxes = document.querySelectorAll('.inputTextArea');
 
   textBoxes.forEach(textBox => {
@@ -82,7 +82,7 @@ function transitionTextBox() {
   });
 }
 
-// My attempt to rewrite this code for the wrapper
+// My attempt to rewrite this code for the wrapper layers
 
 const foreground = document.querySelector('.foreground');
 console.log(foreground);
@@ -103,3 +103,96 @@ function transitionForeground() {
     foreground.classList.remove('transitionForeground');
   }
 }
+
+const middleground = document.querySelector('.middleground');
+console.log(middleground);
+
+window.addEventListener('scroll', transitionMiddleground);
+
+transitionMiddleground();
+
+function transitionMiddleground() {
+  const triggerBottom = window.innerHeight / 5 * 4;
+  const middleground = document.querySelector('.middleground');
+
+  const middlegroundTop = middleground.getBoundingClientRect().top;
+
+  if(middlegroundTop < triggerBottom) {
+    middleground.classList.add('transitionMiddleground')
+  } else {
+    middleground.classList.remove('transitionMiddleground');
+  }
+}
+
+const heroHeader = document.querySelector('#heroHeader');
+console.log(heroHeader);
+
+window.addEventListener('scroll', transitionHeroHeader);
+
+transitionHeroHeader();
+
+function transitionHeroHeader() {
+  const triggerBottom = window.innerHeight / 5 * 4;
+  const heroHeader = document.querySelector('#heroHeader');
+
+  const heroHeaderTop = heroHeader.getBoundingClientRect().top;
+
+  if(heroHeaderTop < triggerBottom) {
+    heroHeader.classList.add('transitionHeroHeader')
+  } else {
+    heroHeader.classList.remove('transitionHeroHeader');
+  }
+}
+
+const wrapper = document.querySelector('.wrapper');
+console.log(wrapper);
+
+window.addEventListener('scroll', removeWrapper);
+
+removeWrapper();
+
+function removeWrapper() {
+
+  const wrapper = document.querySelector('.wrapper');
+
+  setTimeout(() => wrapper.innerHTML = '', 35000);
+
+}
+
+
+
+
+// My attempt to set active state on the nav link when in viewport
+// Code sourced from here:
+// https://www.youtube.com/watch?v=QOWq3_zpOK4
+// YouTube channel: dcode -- Detect DOM Changes With The Intersection Observer API - JavaScript Tutorial
+// and https://www.youtube.com/watch?v=gQ8WggeHoJU&list=PLQIg5ltqYKppPcnn-Anucd5vrkXP9Oh1Y&index=50
+// YouTube channel: Steve Griffith -- IntersectioObserver API
+
+document.addEventListener('DOMContentLoaded', () => {
+  let options = {
+    root: null,
+    rootMargin: "-250px -1px",
+    threshold: 0.05
+  };
+
+  let observer = new IntersectionObserver(enterIntersection, options);
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+      console.log('watching', section.textContent);
+    });
+  });
+
+  function enterIntersection(entries) {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      console.log('intersecting');
+      console.log(entry.target);
+      console.log(entry.time, entry.intersectionRatio);
+      entry.target.classlist.add('active');
+    } else {
+      entry.target.classList.remove('active');
+    }
+  });
+}
+
