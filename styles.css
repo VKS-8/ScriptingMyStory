@@ -139,6 +139,7 @@ header {
   /* Searching for the setting to stop the nav and header from scrolling off the page */
   .navContentContainer {
     position: relative;
+    margin: 0 auto 0.1rem;
   }
 
 section nav #nav-bar {
@@ -182,7 +183,7 @@ section nav #nav-bar {
   background: #3d3720; /*legal pad top border brown*/
 
   margin: 0;
-  padding: 0.3rem 0.75rem;
+  padding: 0.75rem 0.75rem;
   width: 100%;
 
   text-decoration: none;
