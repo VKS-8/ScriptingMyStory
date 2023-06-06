@@ -11,18 +11,20 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600;900&display=swap" rel="stylesheet">
   <script defer src="app.js">
   </script>
 </head>
 <body class="parallaxBackground">
-  <!-- <div class="wrapper">
+   <!-- <div class="wrapper"> -->
     <!-- Hero header and scroll container-->
-    <header id="hero" class="hero-section">
-      <img class="middleground hero-section" src="/images/transparentBkgrd/james-todd-E9wD5lwKveM-unsplash-transparent-background-edgeSmudge.png" alt="silhouette of boys playing a mound of dirt"></img>
-      <img class="foreground hero-section" src="/images/transparentBkgrd/aaron-burden-6jYoil2GhVk-unsplash-transparent-portrait2.png" alt="silhouette of boy reading"></img>
-      <div><h1 id="heroHeader">Scripting My Story</h1></div>
-    </header>
-  </div> -->
+    <!-- <header id="hero" class="hero-section"> -->
+      <!-- <img class="middleground hero-section" src="/images/transparentBkgrd/james-todd-E9wD5lwKveM-unsplash-transparent-background-edgeSmudge.png" alt="silhouette of boys playing a mound of dirt"></img> -->
+      <!-- <img class="foreground hero-section" src="/images/transparentBkgrd/aaron-burden-6jYoil2GhVk-unsplash-transparent-portrait2.png" alt="silhouette of boy reading"></img> -->
+      <!-- <div><h1 id="heroHeader">Scripting My Story</h1></div> -->
+    <!-- </header> -->
+  <!-- </div> -->
   <div class="navContentContainer">
     <!-- Nav -->
     <section id="nav">
@@ -36,43 +38,58 @@
     </section>
 
 
-    <h2 class="notesHeading">Scripting My Story</h2>
+    <h2 class="appTitle">Scripting My Story</h2>
   </div>
     <!-- Add New Note to Script -->
     <section>
       <form>
         <fieldset>
-          <section id="new-note">
-            <div id="new-note-heading">
-              <h2>New Entry</h2>
+          <section id="newNote">
+            <div id="newNoteHeading">
+              <h3>New Entry</h3>
             </div>
-            <!-- Select a character to write new note about or create new character -->
+            <!-- Select a character button to write new note about or create new character -->
             <div id="charactersContainer">
-              <div id="characterBtns" class="button">
-              </div>
-              <!-- Button will populate for ease of access as a character is created -->
-              <button id="addCharacterBtn">Add Character</button>
+              <div id="addedCharacterContainer">
+                <!-- Button will populate for ease of access as a character is created -->
+              <button id="addCharacterBtn" class="button">
+                Add Character
+              </button>
+              <ul id="characterList">
+              <a href="#character1" id="character1" class="button">Char1</a>
+              <a href="#character2" id="character2" class="button">Char2</a>
+              <a href="#character3" id="character3" class="button">Char3</a>
+              <a href="#character4" id="character4" class="button">Char4</a>
+              <a href="#character5" id="character5" class="button">Char5</a>
+              <a href="#character3" id="character3" class="button">Char3</a>
+              <a href="#character4" id="character4" class="button">Char4</a>
+              <a href="#character5" id="character5" class="button">Char5</a>
+              </ul>
+            </div>
+
               <div id="characterModal" class="modal">
                 <div class="modalContent">
                   <span class="close">&times;</span>
                   <form id="characterForm">
-                    <label for="nameInput" ><!--change to screen reader only "Name required" -->
+                    <label for="characterNameInput" ><!--change to screen reader only "Name required" -->
                     </label>
-                    <input type="text" id="nameInput" placeholder="Enter name" required>
-                    <label for="imageInput" required><!--change to screen reader only "Add Image URL required"-->
+                    <input type="text" id="characterNameInput" placeholder="Enter name" required>
+                    <label for="characterImageInput" required><!--change to screen reader only "Add Image URL required"-->
                       <div class="toolTip">
                         <span class="toolTipText">
                           Add placeholder image if you don't have an image ready
                         </span>
                       </div>
                     </label>
-                    <input type="text" id="imageInput"  placeholder="Enter URL for character image" title="Fix tooltip add placeholder image url if no image is ready yet">
-                    <button type="submit">
-                      Add Character
-                    </button>
-                    <button type="button" id="addAnotherBtn">
-                      Add Another Character
-                    </button>
+                    <input type="text" id="characterImageInput"  placeholder="Enter URL for character image" title="Fix tooltip add placeholder image url if no image is ready yet">
+                    <div id="modalButtons">
+                      <button type="submit" class="button">
+                        Add Character
+                      </button>
+                      <button type="button" id="addAnotherBtn" class="button">
+                        Add Another Character
+                      </button>
+                    </div>
                   </form>
                 </div>
               </div>
@@ -88,11 +105,6 @@
             </div>
             <!-- Buttons append textArea text to select category -->
             <div id="categories">
-              <button type="button"
-                id="add-new-character-button"
-                class="button">
-                  New Character
-              </button>
               <button type="button"
                 id="add-desciption-button"
                 class="button">

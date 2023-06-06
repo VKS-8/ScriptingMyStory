@@ -62,7 +62,7 @@ const addCharacterButton = document.querySelector('#addCharacterBtn');
 const closeButton = document.querySelector('.close');
 const addAnotherButton = document.querySelector('#addAnotherBtn');
 const characterForm = document.querySelector('#characterForm');
-const addImage = document.querySelector('imageInput')
+const addImage = document.querySelector('characterImageInput')
 
 addCharacterButton.addEventListener('click', () => {
   characterModal.style.display = 'block';
@@ -80,8 +80,8 @@ addAnotherButton.addEventListener('click', () => {
 characterForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const nameInput = document.querySelector('#nameInput');
-  const imageInput = document.querySelector('#imageInput');
+  const nameInput = document.querySelector('#characterNameInput');
+  const imageInput = document.querySelector('#characterImageInput');
 
   const character = {
     name: nameInput.value,

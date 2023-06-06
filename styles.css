@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600;900&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0 auto;
@@ -25,6 +22,10 @@ html {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 
+}
+
+a {
+  text-decoration: none;
 }
 
 :root {
@@ -214,20 +215,21 @@ h2 {
   display: none;
   position: fixed;
   z-index: 100;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  left: 25%;
+  top: 25vh;
+  width: 50%;
+  height: 25%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.modal-content {
+.modalContent {
   background-color: #fefefe;
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  height 50%
   max-width: 500px;
 }
 
@@ -246,9 +248,58 @@ h2 {
   cursor: pointer;
 }
 
+/* Character Form styles */
+
+.modal {
+  border-radius: 10px;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "name"
+  "image"
+  "buttons";
+}
+
+#characterNameInput {
+  grid-area: name;
+  height: 3rem;
+  width: 80%;
+  margin: 0.5rem auto;
+  padding: 0 0 0 2rem;
+  border: 1px solid #808080;
+  border-radius: 10px;
+}
+
+#characterImageInput {
+  grid-area: image;
+  height: 3rem;
+  width: 80%;
+  margin: 0.5rem auto;
+  padding: 0 0 0 2rem;
+  border: 1px solid #808080;
+  border-radius: 10px;
+}
+
+#modalButtons {
+  grid-area: buttons;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Add character scene info */
 
-.notesHeading {
+.appTitle {
   /* position: sticky; */
   width: 100%;
   background: #f7f1d0;
@@ -261,7 +312,36 @@ h2 {
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.75), 0 6px 10px 0 rgba(0, 0, 0, 1);
   }
 
+#newNoteHeading {
+  margin: -10rem auto 1.5rem;
+  font-size: 3.5rem;
+}
 
+#newNote {
+  text-align: center; /*centers the project-items*/
+  margin: 10rem auto;
+}
+
+#characterList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#characterList a {
+  display: flex;
+  /* background-image: url("images/transparentBkgrd/brian-lundquist-Gp-g69K-pgs-unsplash-transparent-background.png"); */
+  background: #f0f0f0;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  margin: 3rem 1rem;
+  padding: 2rem;
+  color: black;
+  cursor: pointer;
+  font-size: 2.75rem;
+  align-items: center;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+}
 
 .note-items {
   display: inline-grid;
@@ -289,16 +369,14 @@ h2 {
 /* .form-control */
 
 .button {
-/*   position: relative; */
   width: 6rem;
   height: 6rem;
   border: 3px solid #34b1eb; /* Light blue */
   border-radius: 50%;
   margin: 1rem;
   padding: 0;
-  /* z-index: 3; */
   cursor: pointer;
-  font-size: 0.5rem;
+  font-size: .75rem;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
