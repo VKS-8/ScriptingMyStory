@@ -23,10 +23,6 @@ html {
   scrollbar-width: none;  /* Firefox */
 }
 
-a {
-  text-decoration: none;
-}
-
 :root {
   --border-radius10: 10px;
   --border-radius15: 15px;
@@ -63,6 +59,34 @@ a {
   visibility: visible;
 }
 
+h2 {
+  font-family: Optima, sans-serif;
+  font-weight: light;
+  letter-spacing: 0.15rem;
+}
+
+h3 {
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0 1rem;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  text-align: start;
+  letter-spacing: 0.10rem;
+  line-height: 1.5rem;
+  border: 2px solid red;
+  border-radius: 10px;
+  background: rgba(198, 228, 247, 75%)
+}
+/* Parallax Hero Animation styling */
+
 /*Code sourced from this YouTube video
   https://www.youtube.com/watch?v=mxHoPYFsTuk  4:50*/
 .wrapper {
@@ -97,50 +121,52 @@ header {
   text-shadow: 0 0 5px #000;
 }
 
-
+/* Body background -- yellow notepad paper -- does not scroll */
 .parallaxBackground {
   position: relative;
   content: "";
   background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true");
   transform: translateZ(-100px);
   min-height: 750px;
-  max-width: 100%;
+  max-width: 1600px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-  .foreground {
-  /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
-  transform: translateZ(-25px) scale(2);
-  }
+.foreground {
+/* Sets image on plane that scrolls at a different speed than the other planes based on distance */
+transform: translateZ(-25px) scale(2);
+}
 
-  .middleground {
-  /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
-  transform: translateZ(-80px) scale(3);
-  }
+.middleground {
+/* Sets image on plane that scrolls at a different speed than the other planes based on distance*/
+transform: translateZ(-80px) scale(3);
+}
 
-  .middleground, .foreground {
-    position: absolute;
-    top: 100rem;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
-  }
+.middleground, .foreground {
+  position: absolute;
+  top: 100rem;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
+}
 
-  .section {
-    display: none;
-  }
+/* Sets elements to invisible until this class is removed from their classList
+    in javascript at the end of the parallax hero animation */
+.section {
+  display: none;
+}
 
-  /* Searching for the setting to stop the nav and header from scrolling off the page */
-  .navContentContainer {
-    position: relative;
-    margin: 0 auto 0.1rem;
-  }
+/* TODO Searching for the setting to stop the nav and header from scrolling off the page */
+.navContentContainer {
+  position: relative;
+  margin: 0 auto 0.1rem;
+}
 
 section nav #nav-bar {
   position: fixed;
@@ -149,13 +175,10 @@ section nav #nav-bar {
   flex-direction: row;
   width: 100%;
   justify-content: center;
-  /* z-index: 25; */
-
-  border: px solid #3385e8; /*periwinkle*/
 }
 
 #nav-bar {
-  position: sticky; /* Brings nav infront of parallax wrapper with h2*/
+  position: sticky; /* Brings nav in front of parallax wrapper along with h2*/
   top: 0;
   left: 0;
   display: flex;
@@ -174,13 +197,13 @@ section nav #nav-bar {
 
 #icon:hover {
   background: linen;
-  color: black;
+  color: #3293a8;
 }
 
 .nav-link {
   display: flex;
 
-  background: #3d3720; /*legal pad top border brown*/
+  background: #3d3720; /*legal pad top binder brown*/
 
   margin: 0;
   padding: 0.75rem 0.75rem;
@@ -198,29 +221,36 @@ section nav #nav-bar {
   justify-content: center;
   align-items: center;
   text-align: center;
-
-  border: px solid #3293a8; /*tourquois*/
 }
 
 .nav-link:hover {
   background: linen;
-  color: black;
+  color: #3293a8;
 }
 
-/* Set active state on nav when section scrolls into viewport */
+/* TODO Testing-->Set active state on nav when section scrolls into viewport */
 .nav-link:active {
   background: linen;
-  color: black;
+  color: #3293a8;
 }
 
-h2 {
-  font-family: Optima, sans-serif;
-  font-weight: light;
-  letter-spacing: 0.15rem;
-}
+/* App's main title */
+.appTitle {
+  /* position: sticky; */
+  width: 100%;
+  background: #f7f1d0;
+  font-size: 3rem;
+  text-align: center;
+  border: 2px solid red;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.75), 0 6px 10px 0 rgba(0, 0, 0, 1);
+  }
 
-/* Add characters */
+/* Add characters section styles*/
 
+/* Modal Container */
 .modal {
   display: none;
   position: fixed;
@@ -229,11 +259,16 @@ h2 {
   top: 25vh;
   width: 50%;
   height: 25%;
+  border-radius: 10px;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+/* Content inside of modal */
 .modalContent {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
   background-color: #fefefe;
   margin: 10% auto;
   padding: 20px;
@@ -243,6 +278,7 @@ h2 {
   max-width: 500px;
 }
 
+/* Modal closing X */
 .close {
   color: #aaa;
   float: right;
@@ -256,18 +292,6 @@ h2 {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-/* Character Form styles */
-
-.modal {
-  border-radius: 10px;
-}
-
-.modalContent {
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
 }
 
 form {
@@ -307,31 +331,19 @@ form {
   justify-content: center;
 }
 
-/* Add character scene info */
+/* New Entry section styles */
 
-.appTitle {
-  /* position: sticky; */
-  width: 100%;
-  background: #f7f1d0;
-  font-size: 3rem;
-  text-align: center;
-  border: 2px solid red;
-  margin: 0 auto;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.75), 0 6px 10px 0 rgba(0, 0, 0, 1);
-  }
-
-#newNoteHeading {
+#newEntryHeading {
   margin: -10rem auto 1.5rem;
   font-size: 3.5rem;
 }
 
-#newNote {
+#newEntry {
   text-align: center; /*centers the project-items*/
   margin: 10rem auto;
 }
 
+/* Add character section */
 #addCharacterBtn {
   font-size: 1rem;
 }
@@ -406,8 +418,8 @@ fieldset {
   margin: 0 10rem; /*Not working*/
 }
 
-#delete-btn,
-#edit-btn {
+#deleteBtn,
+#editBtn {
   display: flex;
   justify-content: center;
   width: 40%;
@@ -420,33 +432,17 @@ fieldset {
 
 }
 
-#delete-btn:hover,
-#edit-btn:hover {
+#deleteBtn:hover,
+#editBtn:hover {
   background: #c6e4f7;
 }
 
-h3 {
-  margin: 1rem 0;
-  padding: 1rem;
-
-}
-
-p {
-  margin: 0 1rem;
-  padding: 1rem;
-  font-family: Arial, sans-serif;
-  text-align: start;
-  letter-spacing: 0.10rem;
-  line-height: 1.5rem;
-  border: 2px solid red;
-  border-radius: 10px;
-  background: rgba(198, 228, 247, 75%)
-}
-
+/* TODO: find out what this if for */
 .alert {
   visibility: hidden;
 }
 
+/* Single text box to input information for each aspect of the story */
 .inputTextArea {
   display: visible;
   width: 80%;
@@ -456,7 +452,6 @@ p {
   font-size: 2rem;
   line-height: 1.5rem;
   letter-spacing: 0.05rem;
-
 }
 
 textarea {
@@ -472,7 +467,7 @@ textarea {
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
-#characterSelectDropdown {
+/* #characterSelectDropdown {
   display: flex;
   align-items: center;
   font-size: 1rem;
@@ -482,42 +477,49 @@ textarea {
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /*Code sourced from:
 * 50 Projects In 50 Days - HTML, CSS & JS - 6 Scroll Animation || By Frontend Genius || #html #css #js
 * https://www.youtube.com/watch?v=Yuc0UcHyFXc */
 
-/* This will eventually remove the parallax wrapper at a specific scroll point*/
+/* Parallax hero animation settings*/
+
+/* h1 element transition */
 .transitionHeroHeader {
   transform: translateY(-100%);
   transition: transform 10s ease;
 }
 
+/* Foreground image element transition */
 .transitionForeground {
     transform: translateY(-100%);
     transition: transform 15s ease;
   }
 
+  /* Middleground image element transition */
 .transitionMiddleground {
   transform: translateY(-100%);
   transition: transform 17s ease;
 }
 
-/* This transitions the text area off the screen */
+/* This transitions the text area box off the screen */
 
 .transition-box {
-  transform: translateX(150%);
+  transform: translateX(0%);
   transition: transform 1s ease;
 }
 
-.transition-box:nth-of-type(even) {
+/* TODO may not need this for this design */
+/* .transition-box:nth-of-type(even) {
   transform: translateX(100%);
-}
+} */
 
 .transition-box.transitionTextBox {
-  transform: translateX(0);
+  transform: translateX(150%);
 }
+
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 410px) {
   html {
