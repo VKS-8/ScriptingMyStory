@@ -146,6 +146,8 @@ function transitionHeroHeader() {
   }
 }
 
+// Wrapper div effects
+
 const wrapper = document.querySelector('.wrapper');
 console.log(wrapper);
 
@@ -162,8 +164,16 @@ function removeWrapper() {
   setTimeout(() => appTitle.classList.remove('section'), 18000);
   setTimeout(() => newNote.classList.remove('section'), 18000);
   setTimeout(() => div.classList.remove('section'), 18000);
+  setTimeout(() => deleteEditBtns.remove('section'), 18000);
 
-}
+  // setTimeout(() =>
+  //   wrapper.style.display = 'none',
+  //   nav.classList.remove('section'),
+  //   appTitle.classList.remove('section'),
+  //   newNote.classList.remove('section'),
+  //   div.classList.remove('section'),
+  //   deleteEditBtns.remove('section'), 18000);
+
 
 
 
