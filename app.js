@@ -155,7 +155,7 @@ function removeWrapper() {
 
   const wrapper = document.querySelector('.wrapper');
 
-  setTimeout(() => wrapper.innerHTML = '', 35000);
+  setTimeout(() => wrapper.innerHTML = '', 22000);
 
 }
 

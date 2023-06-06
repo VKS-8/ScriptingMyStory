@@ -331,12 +331,12 @@ textarea {
 
 .transitionForeground {
     transform: translateY(-100%);
-    transition: transform 20s ease;
+    transition: transform 15s ease;
   }
 
 .transitionMiddleground {
   transform: translateY(-100%);
-  transition: transform 30s ease;
+  transition: transform 18s ease;
 }
 
 /* This transitions the text area off the screen */
