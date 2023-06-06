@@ -43,8 +43,8 @@
     <section>
       <form>
         <fieldset>
-          <section id="newNote" class="section">
-            <div id="newNoteHeading">
+          <section id="newEntry" class="section">
+            <div id="newEntryHeading">
               <h3>New Entry</h3>
             </div>
             <!-- Select a character button to write new note about or create new character -->
@@ -94,12 +94,13 @@
                 </div>
               </div>
             </div>
+
             <!-- Text area to write new note information for each category -->
-            <div class="new-notes">
+            <div class="newNotes">
               <textarea
-                id="new-entry"
+                id="newEntry"
                 class="inputTextArea"
-                name="new-entry"
+                name="newEntry"
                 placeholder="Enter new entry then click appropriate button to add to the correct category">
               </textarea>
             </div>
@@ -129,15 +130,15 @@
       <section id="characterCardsContainer">
         <div class="characterCards">
         </div>
-        <div class="delete-edit-buttons section">
+        <div class="deleteEditBtns section">
           <button
             type="button"
-            id="delete-btn">
+            id="deleteBtn" class="button">
               Delete Entry
           </button>
           <button
             type="button"
-            id="edit-btn">
+            id="editBtn" class="button">
               Edit Entry
           </button>
         </div>
