@@ -57,70 +57,6 @@
 
 // Add new character
 
-const characterModal = document.querySelector('#characterModal');
-const addCharacterButton = document.querySelector('#addCharacterBtn');
-const closeButton = document.querySelector('.close');
-const addAnotherButton = document.querySelector('#addAnotherBtn');
-const characterForm = document.querySelector('#characterForm');
-const addImage = document.querySelector('imageInput')
-
-addCharacterButton.addEventListener('click', () => {
-  characterModal.style.display = 'block';
-});
-
-closeButton.addEventListener('click', () => {
-  characterModal.style.display = 'none';
-  characterForm.reset();
-});
-
-addAnotherButton.addEventListener('click', () => {
-  characterForm.reset();
-});
-
-characterForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const nameInput = document.querySelector('#nameInput');
-  const imageInput = document.querySelector('#imageInput');
-
-  const character = {
-    name: nameInput.value,
-    image: imageInput.value,
-    additionalInfo: ""
-  };
-
-  createCharacterButton(character);
-  characterForm.reset();
-
-  const shouldAddAnother = confirm('Do you want to add another character?');
-  if (!shouldAddAnother) {
-    characterModal.style.display = 'none';
-  }
-});
-
-function createCharacterButton(character) {
-  const charactersContainer = document.querySelector('#charactersContainer');
-
-  const button = document.createElement('button');
-  button.innerHTML = `<img src='${character.image}' alt='${character.name}' class="characterImage">`;
-  button.classList.add('characterBtn');
-
-  button.addEventListener("click", () => {
-    character.additionalInfo = prompt("Enter additional information about the character:");
-    // Update the DOM with the additional information
-    const infoParagraph = document.createElement("p");
-    infoParagraph.textContent = character.additionalInfo;
-    charactersContainer.appendChild(infoParagraph);
-  });
-
-  charactersContainer.appendChild(button);
-}
-
-imageInput.addEventListener("paste", (event) => {
-  const clipboardData = event.clipboardData || window.Clipboard;
-  const pastedText = clipboardData.getData("text");
-  imageInput.value = pastedText;
-});
 
 //Code sourced from:
 // 50 Projects In 50 Days - HTML, CSS & JS - 6 Scroll Animation || By Frontend Genius || #html #css #js
@@ -222,7 +158,7 @@ function removeWrapper() {
 
   const wrapper = document.querySelector('.wrapper');
 
-  setTimeout(() => wrapper.style.display = 'none', 20000);
+  setTimeout(() => wrapper.style.display = 'none', 18000);
 
 }
 
@@ -266,3 +202,67 @@ document.addEventListener('DOMContentLoaded', () => {
 // Append character button to page as user creates a new character
 let characterBtn = document.querySelectorAll('.characterBtn');
 
+const characterModal = document.querySelector('#characterModal');
+const addCharacterButton = document.querySelector('#addCharacterBtn');
+const closeButton = document.querySelector('.close');
+const addAnotherButton = document.querySelector('#addAnotherBtn');
+const characterForm = document.querySelector('#characterForm');
+const addImage = document.querySelector('imageInput')
+
+addCharacterButton.addEventListener('click', () => {
+  characterModal.style.display = 'block';
+});
+
+closeButton.addEventListener('click', () => {
+  characterModal.style.display = 'none';
+  characterForm.reset();
+});
+
+addAnotherButton.addEventListener('click', () => {
+  characterForm.reset();
+});
+
+characterForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const nameInput = document.querySelector('#nameInput');
+  const imageInput = document.querySelector('#imageInput');
+
+  const character = {
+    name: nameInput.value,
+    image: imageInput.value,
+    additionalInfo: ""
+  };
+
+  createCharacterButton(character);
+  characterForm.reset();
+
+  const shouldAddAnother = confirm('Do you want to add another character?');
+  if (!shouldAddAnother) {
+    characterModal.style.display = 'none';
+  }
+});
+
+function createCharacterButton(character) {
+  const charactersContainer = document.querySelector('#charactersContainer');
+
+  const button = document.createElement('button');
+  button.innerHTML = `<img src='${character.image}' alt='${character.name}' class="characterImage">`;
+  button.classList.add('characterBtn');
+
+  button.addEventListener("click", () => {
+    character.additionalInfo = prompt("Enter additional information about the character:");
+    // Update the DOM with the additional information
+    const infoParagraph = document.createElement("p");
+    infoParagraph.textContent = character.additionalInfo;
+    charactersContainer.appendChild(infoParagraph);
+  });
+
+  charactersContainer.appendChild(button);
+}
+
+imageInput.addEventListener("paste", (event) => {
+  const clipboardData = event.clipboardData || window.Clipboard;
+  const pastedText = clipboardData.getData("text");
+  imageInput.value = pastedText;
+});
