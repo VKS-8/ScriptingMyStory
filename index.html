@@ -48,7 +48,7 @@
             </div>
             <!-- Select a character to write new note about or create new character -->
             <div id="charactersContainer">
-              <div id="characters" class="button">
+              <div id="characterBtns" class="button">
               </div>
               <!-- Button will populate for ease of access as a character is created -->
               <button id="addCharacterBtn">Add Character</button>
@@ -56,7 +56,8 @@
                 <div class="modalContent">
                   <span class="close">&times;</span>
                   <form id="characterForm">
-                    <label for="nameInput" ><!--change to screen reader only "Name required" --></label>
+                    <label for="nameInput" ><!--change to screen reader only "Name required" -->
+                    </label>
                     <input type="text" id="nameInput" placeholder="Enter name" required>
                     <label for="imageInput" required><!--change to screen reader only "Add Image URL required"-->
                       <div class="toolTip">
@@ -66,13 +67,18 @@
                       </div>
                     </label>
                     <input type="text" id="imageInput"  placeholder="Enter URL for character image" title="Fix tooltip add placeholder image url if no image is ready yet">
-                    <button type="submit">Add Character</button>
-                    <button type="button" id="addAnotherBtn">Add Another Character</button>
+                    <button type="submit">
+                      Add Character
+                    </button>
+                    <button type="button" id="addAnotherBtn">
+                      Add Another Character
+                    </button>
                   </form>
                 </div>
+              </div>
             </div>
             <!-- Text area to write new note information for each category -->
-            <div class="new-notes form-control">
+            <div class="new-notes">
               <textarea
                 id="new-entry"
                 class="inputTextArea"
@@ -108,37 +114,20 @@
       </form>
     </section>
     <div id="sections">
-      <section id="notes">
-        <div class="note-items">
-
-          <a
-            id="notes"
-            class="note-link"
-            href="#new-note"
-            target="_blank">
-
-            <h3
-              id="note-cat-title">
-                Story Title/Section/Chapter/Etc
-            </h3>
-          </a>
-            <br>
-
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          <div
-            class="delete-edit-buttons">
-              <button
-                type="button"
-                id="delete-btn">
-                  Delete Entry
-              </button>
-              <button
-                type="button"
-                id="edit-btn">
-                  Edit Entry
-              </button>
-          </div>
+      <section id="characterCardsContainer">
+        <div class="characterCards">
+        </div>
+        <div class="delete-edit-buttons">
+          <button
+            type="button"
+            id="delete-btn">
+              Delete Entry
+          </button>
+          <button
+            type="button"
+            id="edit-btn">
+              Edit Entry
+          </button>
         </div>
       </section>
     </div>
