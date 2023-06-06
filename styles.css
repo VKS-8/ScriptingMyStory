@@ -135,7 +135,6 @@ header {
   /* Searching for the setting to stop the nav and header from scrolling off the page */
   .navContentContainer {
     position: relative;
-    /* z-index: 25; */
 
   }
 
