@@ -31,6 +31,30 @@ html {
  --border-radius: 15px;
 }
 
+/* Tool tips styling */
+.toolTip {
+  position: relative;
+  display: inline-block;
+}
+
+.toolTip .toolTipText {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the toolTip */
+  position: absolute;
+  z-index: 1;
+}
+
+.toolTip:hover .toolTipText {
+  visibility: visible;
+}
+
 /*Code sourced from this YouTube video
   https://www.youtube.com/watch?v=mxHoPYFsTuk  4:50*/
 .wrapper {
@@ -45,18 +69,18 @@ html {
 }
 
 header {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   transform-style: preserve-3d;
   z-index: -1;
+
 }
 
 #heroHeader {
   position: relative;
-  top: 50vh;
+  top: 40vh;
   width: 100%;
   color: #fff;
   font-size: 10rem;
@@ -95,10 +119,16 @@ header {
     padding: 0;
     height: 100%;
     width: 100%;
-    background-attachment: scroll;
     background-repeat: no-repeat;
     background-position: center;
     object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
+  }
+
+  /* Searching for the setting to stop the nav and header from scrolling off the page */
+  .navContentContainer {
+    position: relative;
+    /* z-index: 25; */
+
   }
 
 section nav #nav-bar {
@@ -108,7 +138,7 @@ section nav #nav-bar {
   flex-direction: row;
   width: 100%;
   justify-content: center;
-  z-index: 5;
+  /* z-index: 25; */
 
   border: px solid #3385e8; /*periwinkle*/
 }
@@ -166,14 +196,60 @@ section nav #nav-bar {
   color: black;
 }
 
+/* Set active state on nav when section scrolls into viewport */
+.nav-link:active {
+  background: linen;
+  color: black;
+}
+
 h2 {
   font-family: Optima, sans-serif;
   font-weight: light;
   letter-spacing: 0.15rem;
 }
 
+/* Add characters */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add character scene info */
+
 .notesHeading {
-  position: sticky;
+  /* position: sticky; */
   width: 100%;
   background: #f7f1d0;
   font-size: 3rem;
@@ -215,7 +291,7 @@ h2 {
 
 /* .form-control */
 
-.add-to-script-button {
+.button {
 /*   position: relative; */
   width: 6rem;
   height: 6rem;
@@ -223,13 +299,13 @@ h2 {
   border-radius: 50%;
   margin: 1rem;
   padding: 0;
-  z-index: -1;
+  /* z-index: 3; */
   cursor: pointer;
   font-size: 0.5rem;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
-.add-to-script-button:hover {
+.button:hover {
   background: #c6e4f7;
 }
 
@@ -297,7 +373,7 @@ p {
 textarea {
   display: relative;
   top: 0;
-  width: 100%;
+  width: 80%;
   height: 50vh;
   margin: 0;
   padding: 0.5rem;
@@ -354,25 +430,31 @@ textarea {
   transform: translateX(0);
 }
 
-/* Testing active status on sections */
-.active .nav-link {
-  background: linen;
-  color: black;
-}
-
 @media screen and (max-width: 410px) {
+  html {
+    max-width: 410px;
+  }
+
   #notes-header {
     font-size: 2rem;
   }
 }
 
 @media screen and (max-width: 310px) {
+  html {
+    max-width: 310px;
+  }
+
   #notes-header {
     font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 245px) {
+  html {
+    max-width: 245px;
+  }
+
   #notes-header {
     font-size: 0.75rem;
   }

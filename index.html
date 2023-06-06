@@ -9,124 +9,138 @@
   <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">
   <script crossorigin="anonymous" src="https://kit.fontawesome.com/2d46e81787.js">
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script defer src="app.js">
   </script>
 </head>
 <body class="parallaxBackground">
-  <div class="wrapper">
+  <!-- <div class="wrapper">
     <!-- Hero header and scroll container-->
     <header id="hero" class="hero-section">
       <img class="middleground hero-section" src="/images/transparentBkgrd/james-todd-E9wD5lwKveM-unsplash-transparent-background-edgeSmudge.png" alt="silhouette of boys playing a mound of dirt"></img>
       <img class="foreground hero-section" src="/images/transparentBkgrd/aaron-burden-6jYoil2GhVk-unsplash-transparent-portrait2.png" alt="silhouette of boy reading"></img>
       <div><h1 id="heroHeader">Scripting My Story</h1></div>
     </header>
-  </div>
-
-  <!-- Nav -->
-  <section id="nav">
-    <nav id="nav-bar">
-      <a href="#" id="icon" class="nav-link">Icon</a>
-      <a href="#characters" class="nav-link">Characters</a>
-      <a href="#settings" class="nav-link">Settings</a>
-      <a href="#description" class="nav-link">Description</a>
-      <a href="#dialogue" class="nav-link">Dialogue</a>
-    </nav>
-  </section>
-
-
-  <h2 class="notesHeading">Scripting My Story</h2>
-
-  <!-- Add New Note to Script -->
-  <section>
-    <form>
-      <fieldset>
-        <section id="new-note">
-          <div id="new-note-heading">
-            <h2>New Entry</h2>
-          </div>
-          <!-- Select a character to write new note about or create new character -->
-          <div>
-            <select id="characterSelectDropdown" name="characters" class="form-control" required>
-              <option value="disabled selected value">Select a character</option>
-              <option>New Character</option>
-              <option>Character1</option>
-              <option>Character2</option>
-              <option>Character3</option>
-              <option>Character4</option>
-              <option>Character5</option>
-              </select>
-          </div>
-          <!-- Text area to write new note information for each category -->
-          <div class="new-notes form-control">
-            <textarea
-              id="new-entry"
-              class="inputTextArea"
-              name="new-entry"
-              placeholder="Enter new entry then click appropriate button to add to the correct category">
-            </textarea>
-          </div>
-          <!-- Buttons append textArea text to select category -->
-          <div id="categories">
-            <button type="button"
-              id="add-new-character-button"
-              class="add-to-script-button">
-                New Character
-            </button>
-            <button type="button"
-              id="add-desciption-button"
-              class="add-to-script-button">
-                Description
-            </button>
-            <button type="button"
-              id="add-setting-button"
-              class="add-to-script-button">
-                Setting
-            </button>
-            <button type="button"
-              id="add-dialogue-button"
-              class="add-to-script-button">
-                Dialogue
-            </button>
-          </div>
-        </section>
-      </fieldset>
-    </form>
-  </section>
-  <div id="sections">
-    <section id="notes">
-      <div class="note-items">
-
-        <a
-          id="notes"
-          class="note-link"
-          href="#new-note"
-          target="_blank">
-
-          <h3
-            id="note-cat-title">
-              Story Title/Section/Chapter/Etc
-          </h3>
-        </a>
-          <br>
-
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-        <div
-          class="delete-edit-buttons">
-            <button
-              type="button"
-              id="delete-btn">
-                Delete Entry
-            </button>
-            <button
-              type="button"
-              id="edit-btn">
-                Edit Entry
-            </button>
-        </div>
-      </div>
+  </div> -->
+  <div class="navContentContainer">
+    <!-- Nav -->
+    <section id="nav">
+      <nav id="nav-bar">
+        <a href="#" id="icon" class="nav-link">Icon</a>
+        <a href="#characters" class="nav-link">Characters</a>
+        <a href="#settings" class="nav-link">Settings</a>
+        <a href="#description" class="nav-link">Description</a>
+        <a href="#dialogue" class="nav-link">Dialogue</a>
+      </nav>
     </section>
-  </div>
 
+
+    <h2 class="notesHeading">Scripting My Story</h2>
+  </div>
+    <!-- Add New Note to Script -->
+    <section>
+      <form>
+        <fieldset>
+          <section id="new-note">
+            <div id="new-note-heading">
+              <h2>New Entry</h2>
+            </div>
+            <!-- Select a character to write new note about or create new character -->
+            <div id="charactersContainer">
+              <div id="characters" class="button">
+              </div>
+              <!-- Button will populate for ease of access as a character is created -->
+              <button id="addCharacterBtn">Add Character</button>
+              <div id="characterModal" class="modal">
+                <div class="modalContent">
+                  <span class="close">&times;</span>
+                  <form id="characterForm">
+                    <label for="nameInput" ><!--change to screen reader only "Name required" --></label>
+                    <input type="text" id="nameInput" placeholder="Enter name" required>
+                    <label for="imageInput" required><!--change to screen reader only "Add Image URL required"-->
+                      <div class="toolTip">
+                        <span class="toolTipText">
+                          Add placeholder image if you don't have an image ready
+                        </span>
+                      </div>
+                    </label>
+                    <input type="text" id="imageInput"  placeholder="Enter URL for character image" title="Fix tooltip add placeholder image url if no image is ready yet">
+                    <button type="submit">Add Character</button>
+                    <button type="button" id="addAnotherBtn">Add Another Character</button>
+                  </form>
+                </div>
+            </div>
+            <!-- Text area to write new note information for each category -->
+            <div class="new-notes form-control">
+              <textarea
+                id="new-entry"
+                class="inputTextArea"
+                name="new-entry"
+                placeholder="Enter new entry then click appropriate button to add to the correct category">
+              </textarea>
+            </div>
+            <!-- Buttons append textArea text to select category -->
+            <div id="categories">
+              <button type="button"
+                id="add-new-character-button"
+                class="button">
+                  New Character
+              </button>
+              <button type="button"
+                id="add-desciption-button"
+                class="button">
+                  Description
+              </button>
+              <button type="button"
+                id="add-setting-button"
+                class="button">
+                  Setting
+              </button>
+              <button type="button"
+                id="add-dialogue-button"
+                class="button">
+                  Dialogue
+              </button>
+            </div>
+          </section>
+        </fieldset>
+      </form>
+    </section>
+    <div id="sections">
+      <section id="notes">
+        <div class="note-items">
+
+          <a
+            id="notes"
+            class="note-link"
+            href="#new-note"
+            target="_blank">
+
+            <h3
+              id="note-cat-title">
+                Story Title/Section/Chapter/Etc
+            </h3>
+          </a>
+            <br>
+
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+          <div
+            class="delete-edit-buttons">
+              <button
+                type="button"
+                id="delete-btn">
+                  Delete Entry
+              </button>
+              <button
+                type="button"
+                id="edit-btn">
+                  Edit Entry
+              </button>
+          </div>
+        </div>
+      </section>
+    </div>
 </body>
 </html>
