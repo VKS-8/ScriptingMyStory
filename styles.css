@@ -336,7 +336,7 @@ textarea {
 
 .transitionMiddleground {
   transform: translateY(-100%);
-  transition: transform 18s ease;
+  transition: transform 17s ease;
 }
 
 /* This transitions the text area off the screen */
