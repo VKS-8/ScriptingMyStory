@@ -34,12 +34,12 @@ html {
 /*Code sourced from this YouTube video
   https://www.youtube.com/watch?v=mxHoPYFsTuk  4:50*/
 .wrapper {
-  height: 225vh;
+  height: 250vh;
   overflow-y: auto;
   overflow-x: hidden;
-  perspective: 8px;
+  perspective: 50px;
   scroll-behavior: smooth;
-  margin: -50rem auto;
+  margin: -40rem auto;
 }
 
 header {
@@ -54,10 +54,11 @@ header {
 
 #heroHeader {
   position: relative;
+  top: 375vh;
   width: 100%;
   color: #fff;
   font-size: 10rem;
-  margin: 100rem auto;
+  margin: 0 auto;
   transform: translateZ(-10px) scale(1);
   text-shadow: 0 0 5px #000;
 }
@@ -78,17 +79,17 @@ header {
 
   .foreground {
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
-  transform: translateZ(-10px) scale(2.5);
+  transform: translateZ(-25px) scale(2);
   }
 
   .middleground {
   /* Sets image on plane that scrolls at a different speed based on distance than the other planes*/
-  transform: translateZ(-30px) scale(6);
-  top: -75rem;
+  transform: translateZ(-80px) scale(3);
   }
 
   .middleground, .foreground {
     position: absolute;
+    top: 100rem;
     padding: 0;
     height: 100%;
     width: 100%;
@@ -98,26 +99,25 @@ header {
     object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
   }
 
-div #nav-bar {
-
+section nav #nav-bar {
+  position: fixed;
+  top: 0;
   display: flex;
   flex-direction: row;
-
   width: 100%;
-
   justify-content: center;
+  z-index: 5;
 
   border: px solid #3385e8; /*periwinkle*/
 }
 
 #nav-bar {
-  position: fixed;
+  position: sticky; /* Brings nav infront of parallax wrapper with h2*/
   top: 0;
   left: 0;
   display: flex;
   width: 100%;
   height: minmax(40vh);
-  z-index: 5;
 }
 
 #icon {
@@ -171,7 +171,8 @@ h2 {
 }
 
 .notesHeading {
-  position: absolute;
+  position: sticky;
+  scroll-margin-block-end: 0;
   width: 100%;
   background: #f7f1d0;
   font-size: 3rem;
