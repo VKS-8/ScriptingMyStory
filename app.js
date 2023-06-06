@@ -157,7 +157,11 @@ function removeWrapper() {
 
   const wrapper = document.querySelector('.wrapper');
 
-  setTimeout(() => wrapper.style.display = 'none', 20000);
+  setTimeout(() => wrapper.style.display = 'none', 18000);
+  setTimeout(() => nav.classList.remove('section'), 18000);
+  setTimeout(() => appTitle.classList.remove('section'), 18000);
+  setTimeout(() => newNote.classList.remove('section'), 18000);
+  setTimeout(() => div.classList.remove('section'), 18000);
 
 }
 

@@ -132,10 +132,13 @@ header {
     object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
   }
 
+  .section {
+    display: none;
+  }
+
   /* Searching for the setting to stop the nav and header from scrolling off the page */
   .navContentContainer {
     position: relative;
-
   }
 
 section nav #nav-bar {
