@@ -84,22 +84,22 @@ function transitionTextBox() {
 
 // My attempt to rewrite this code for the wrapper
 
-const wrapper = document.querySelector('.wrapper');
-console.log(wrapper);
+const foreground = document.querySelector('.foreground');
+console.log(foreground);
 
-window.addEventListener('scroll', transitionWrapper);
+window.addEventListener('scroll', transitionForeground);
 
-transitionWrapper();
+transitionForeground();
 
-function transitionWrapper() {
+function transitionForeground() {
   const triggerBottom = window.innerHeight / 5 * 4;
-  const wrapper = document.querySelector('.wrapper');
+  const foreground = document.querySelector('.foreground');
 
-  const wrapperTop = wrapper.getBoundingClientRect().top;
+  const foregroundTop = foreground.getBoundingClientRect().top;
 
-  if(wrapperTop < triggerBottom) {
-    wrapper.classList.add('transitionWrapper')
+  if(foregroundTop < triggerBottom) {
+    foreground.classList.add('transitionForeground')
   } else {
-    textBox.classList.remove('transitionWrapper');
+    foreground.classList.remove('transitionForeground');
   }
 }
