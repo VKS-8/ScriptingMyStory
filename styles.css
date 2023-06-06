@@ -29,7 +29,15 @@ a {
 }
 
 :root {
- --border-radius: 15px;
+  --border-radius10: 10px;
+  --border-radius15: 15px;
+  --border-radius30: 30px;
+  --border-radius50: 50%;
+  --font-size1: 1rem;
+  --font-size2: 2rem;
+  --font-size3: 3rem;
+  --font-size4: 4rem;
+  --font-size5: 5rem;
 }
 
 /* Tool tips styling */
@@ -320,6 +328,10 @@ form {
 #newNote {
   text-align: center; /*centers the project-items*/
   margin: 10rem auto;
+}
+
+#addCharacterBtn {
+  font-size: 1rem;
 }
 
 #characterList {
