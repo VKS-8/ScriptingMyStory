@@ -18,6 +18,11 @@
   --font-size5: 5rem;
 }
 
+/* TODO: find out what this is for */
+/* .alert {
+  visibility: hidden;
+} */
+
 html {
   z-index: -100;
   max-width: 1600px;
@@ -60,6 +65,7 @@ html {
   visibility: visible;
 }
 
+/* TODO correct all font families to chosen design styles */
 h2 {
   font-family: Optima, sans-serif;
   font-weight: light;
@@ -67,8 +73,10 @@ h2 {
 }
 
 h3 {
-  margin: 1rem 0;
+  margin: 3rem auto;
   padding: 1rem;
+  font-size: 3.5rem;
+  text-align: center;
 }
 
 a {
@@ -82,7 +90,6 @@ p {
   text-align: start;
   letter-spacing: 0.10rem;
   line-height: 1.5rem;
-  border: 2px solid red;
   border-radius: 10px;
   background: rgba(198, 228, 247, 75%)
 }
@@ -90,7 +97,7 @@ p {
 /* This class rule sets elements to invisible until this class is removed from their classList
     in javascript at the end of the parallax hero animation
 */
-.section {
+.display {
   display: none;
 }
 
@@ -195,7 +202,7 @@ transform: translateZ(-80px) scale(3);
   display: flex;
   z-index: 10;
   position: fixed;
-  top: -5.15rem;
+  top: -0.15rem;
   width: 100%;
   height: minmax(40vh);
   justify-content: center;
@@ -264,18 +271,11 @@ transform: translateZ(-80px) scale(3);
 
   /* New Entry section styles */
 
-#newEntryHeading {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 8; */
-  margin: -10rem auto 1.5rem;
+#newSceneEntryHeading {
+  width: 100%;
+  margin: 5rem auto 1.5rem;
   font-size: 3.5rem;
-}
-
-#newEntry {
-  text-align: center; /*centers the project-items*/
-  margin: 10rem auto;
+  text-align: center;
 }
 
 /* Add characters section styles*/
@@ -405,47 +405,19 @@ form {
   justify-content: center;
 }
 
-/* Character Cards Section */
-
-ul .characterCards {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100px;
-  margin: 3rem auto;
-}
-
-.charCard {
-  display: flex;
-  flex-direction: column;
-  background: #34b1eb;
-  margin: 1rem auto;
-  padding: 3rem;
-  justify-content: center;
-  align-items: center;
-}
-
-#deleteEditArchiveBtns {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#deleteBtn:hover,
-#editBtn:hover, #archiveBtn:hover {
-  background: #c6e4f7;
-}
-
-/* TODO: find out what this if for */
-.alert {
-  visibility: hidden;
-}
-
 /* Single text box to input information for each aspect of the story */
+
+.newNote {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
 .inputTextArea {
   display: visible;
   width: 80%;
   height: 50vh;
-  margin: 5rem auto;
+  margin: 0rem auto;
   padding: 2rem;
   font-size: 2rem;
   line-height: 1.5rem;
@@ -461,21 +433,43 @@ textarea {
   padding: 0.5rem;
   color: #808080;
   border-radius: 10px;
-
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* #characterSelectDropdown {
+/* Character Cards Section */
+
+.charCardsSectionTitle {
+  width: 100%;
+}
+
+.characterCards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3rem auto;
+}
+
+.charCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #34b1eb;
+  height: 500px;
+  width: 350px;
+  margin: 1rem auto;
+  padding: 3rem;
+}
+
+#deleteEditArchiveBtns {
   display: flex;
   align-items: center;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.05rem;
-  padding: 0.5rem;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-} */
+  justify-content: center;
+}
+
+#deleteBtn:hover,
+#editBtn:hover, #archiveBtn:hover {
+  background: #c6e4f7;
+}
 
 /*Code sourced from:
 * 50 Projects In 50 Days - HTML, CSS & JS - 6 Scroll Animation || By Frontend Genius || #html #css #js
