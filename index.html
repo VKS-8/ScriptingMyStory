@@ -30,6 +30,7 @@
     <section id="nav" class="section">
       <nav id="nav-bar">
         <a href="#" id="icon" class="nav-link">Icon</a>
+        
         <a href="#characters" class="nav-link">Characters</a>
         <a href="#settings" class="nav-link">Settings</a>
         <a href="#description" class="nav-link">Description</a>
@@ -38,12 +39,13 @@
       </nav>
     </section>
   </div>
-  <h2 id="appTitle" class="appTitle section">Scripting My Story</h2>
+
     <!-- Add New Note to Script -->
     <section>
+      <!-- <h2 id="appTitle" class="appTitle section">Scripting My Story</h2> -->
       <form>
         <fieldset>
-          <section id="newEntry" class="section">
+          <section id="newEntry" class="">
             <div id="newEntryHeading">
               <h3>New Entry</h3>
             </div>
@@ -96,7 +98,7 @@
             </div>
 
             <!-- Text area to write new note information for each category -->
-            <div class="newNotes">
+            <div class="newNote section">
               <textarea
                 id="newEntry"
                 class="inputTextArea"
@@ -107,17 +109,17 @@
             <!-- Buttons append textArea text to select category -->
             <div id="categories">
               <button type="button"
-                id="add-desciption-button"
+                id="addDesciptionBtn"
                 class="button">
                   Description
               </button>
               <button type="button"
-                id="add-setting-button"
+                id="addSettingBtn"
                 class="button">
                   Setting
               </button>
               <button type="button"
-                id="add-dialogue-button"
+                id="addDialogueBtn"
                 class="button">
                   Dialogue
               </button>
@@ -126,20 +128,36 @@
         </fieldset>
       </form>
     </section>
-    <div id="sections">
+    <div id="sections" class="section">
       <section id="characterCardsContainer">
-        <div class="characterCards">
-        </div>
-        <div class="deleteEditBtns section">
+        <ul class="characterCards">
+          <a href="#character1" id="card1" class="charCard">Char1</a>
+          <a href="#character2" id="card2" class="charCard">Char2</a>
+          <a href="#character3" id="card3" class="charCard">Char3</a>
+          <a href="#character4" id="card4" class="charCard">Char4</a>
+          <a href="#character5" id="card5" class="charCard">Char5</a>
+          <a href="#character3" id="card3" class="charCard">Char3</a>
+          <a href="#character4" id="card4" class="charCard">Char4</a>
+          <a href="#character5" id="card5" class="charCard">Char5</a>
+        </ul>
+        <div id="deleteEditArchiveBtns">
           <button
             type="button"
             id="deleteBtn" class="button">
-              Delete Entry
+              Delete <br>
+              Character
           </button>
           <button
             type="button"
             id="editBtn" class="button">
-              Edit Entry
+              Edit <br>
+              Character
+          </button>
+          <button
+            type="button"
+            id="archiveBtn" class="button">
+              Archive <br>
+              Character
           </button>
         </div>
       </section>
