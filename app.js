@@ -55,8 +55,6 @@
 //   }
 // }
 
-
-
 //Code sourced from:
 // 50 Projects In 50 Days - HTML, CSS & JS - 6 Scroll Animation || By Frontend Genius || #html #css #js
 // https://www.youtube.com/watch?v=Yuc0UcHyFXc
@@ -148,21 +146,19 @@ function transitionHeroHeader() {
 
 // Wrapper div set to display none and display sections
 
-window.addEventListener('scroll', removeWrapper);
+// window.addEventListener('scroll', removeWrapper);
 
 removeWrapper();
 
 function removeWrapper() {
 
   const wrapper = document.querySelector('.wrapper');
-  setTimeout(() =>wrapper.style.display = 'none', 18000);
+  setTimeout(() => wrapper.style.display = 'none', 18000);
 
-  
+  setTimeout(() => nav.classList.remove('display'), 18000);
+  setTimeout(() => newSceneEntry.classList.remove('display'), 18000);
+  setTimeout(() => sections.classList.remove('display'), 18000);
 
-  setTimeout(() => nav.classList.remove('section'), 18000);
-  setTimeout(() => appTitle.classList.remove('section'), 18000);
-  setTimeout(() => newEntry.classList.remove('section'), 18000);
-  setTimeout(() => sections.classList.remove('section'), 18000);
 }
 
 // My attempt to set active state on the nav link when in viewport
