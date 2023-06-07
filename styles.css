@@ -373,10 +373,6 @@ form {
 
 /* Add character section */
 
-#addCharacterContainer {
-
-}
-
 /* Character button container */
 #characterList {
   display: flex;
