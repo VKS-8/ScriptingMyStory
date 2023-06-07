@@ -13,6 +13,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600;900&display=swap" rel="stylesheet">
+  <!-- Sets page back to top on refresh to align the parallax text to be in the correct place -->
+  <!-- Code Sourced from: https://stackoverflow.com/questions/30018960/cant-force-page-to-scroll-to-top-on-refresh-on-chrome -->
+  <script>
+    window.onbeforeunload = function () {
+    window.scrollTo(0,0);
+};</script>
   <script defer src="app.js">
   </script>
 </head>
@@ -25,29 +31,29 @@
       <div><h1 id="heroHeader">Scripting My Story</h1></div>
     </header>
   </div>
-  <div class="navContentContainer">
+  <section class="navContentContainer">
     <!-- Nav -->
-    <section id="nav" class="section">
+    <div id="nav" class="display">
       <nav id="nav-bar">
         <a href="#" id="icon" class="nav-link">Icon</a>
-        
+
         <a href="#characters" class="nav-link">Characters</a>
         <a href="#settings" class="nav-link">Settings</a>
         <a href="#description" class="nav-link">Description</a>
         <a href="#dialogue" class="nav-link">Dialogue</a>
         <a href="#dialogue" class="nav-link">Full Script</a>
       </nav>
-    </section>
-  </div>
+    </div>
+  </section>
 
     <!-- Add New Note to Script -->
     <section>
       <!-- <h2 id="appTitle" class="appTitle section">Scripting My Story</h2> -->
       <form>
         <fieldset>
-          <section id="newEntry" class="">
-            <div id="newEntryHeading">
-              <h3>New Entry</h3>
+          <section id="newSceneEntry" class="display">
+            <div id="newSceneEntryHeading">
+              <h3>New Scene Entry</h3>
             </div>
             <!-- Select a character button to write new note about or create new character -->
             <div id="charactersContainer">
@@ -69,36 +75,36 @@
               </ul>
             </div>
 
-              <div id="characterModal" class="modal">
-                <div class="modalContent">
-                  <span class="close">&times;</span>
-                  <form id="characterForm">
-                    <label for="characterNameInput" ><!--change to screen reader only "Name required" -->
-                    </label>
-                    <input type="text" id="characterNameInput" placeholder="Enter name" required>
-                    <label for="characterImageInput" required><!--change to screen reader only "Add Image URL required"-->
-                      <div class="toolTip">
-                        <span class="toolTipText">
-                          Add placeholder image if you don't have an image ready
-                        </span>
-                      </div>
-                    </label>
-                    <input type="text" id="characterImageInput"  placeholder="Enter URL for character image" title="Fix tooltip add placeholder image url if no image is ready yet">
-                    <div id="modalButtons">
-                      <button type="submit" class="button">
-                        Add Character
-                      </button>
-                      <button type="button" id="addAnotherBtn" class="button">
-                        Add Another Character
-                      </button>
+            <div id="characterModal" class="modal">
+              <div class="modalContent">
+                <span class="close">
+                  &times;
+                </span>
+                <form id="characterForm">
+                  <label for="characterNameInput" ><!--change to screen reader only "Name required" -->
+                  </label>
+                  <input type="text" id="characterNameInput" placeholder="Enter name" required>
+                  <label for="characterImageInput" required><!--change to screen reader only "Add Image URL required"-->
+                    <div class="toolTip">
+                      <span class="toolTipText">
+                        Add placeholder image if you don't have an image ready
+                      </span>
                     </div>
-                  </form>
-                </div>
+                  </label>
+                  <input type="text" id="characterImageInput"  placeholder="Enter URL for character image" title="Fix tooltip add placeholder image url if no image is ready yet">
+                  <div id="modalButtons">
+                    <button type="submit" class="button">
+                      Add Character
+                    </button>
+                    <button type="button" id="addAnotherBtn" class="button">
+                      Add Another Character
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
-
             <!-- Text area to write new note information for each category -->
-            <div class="newNote section">
+            <div class="newNote">
               <textarea
                 id="newEntry"
                 class="inputTextArea"
@@ -128,8 +134,9 @@
         </fieldset>
       </form>
     </section>
-    <div id="sections" class="section">
+    <div id="sections" class="display">
       <section id="characterCardsContainer">
+        <h3 class="charCardsSectionTitle">My Characters</h3>
         <ul class="characterCards">
           <a href="#character1" id="card1" class="charCard">Char1</a>
           <a href="#character2" id="card2" class="charCard">Char2</a>
