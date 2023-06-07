@@ -6,9 +6,22 @@
   max-width: 1600px;
 }
 
+:root {
+  --border-radius10: 10px;
+  --border-radius15: 15px;
+  --border-radius30: 30px;
+  --border-radius50: 50%;
+  --font-size1: 1rem;
+  --font-size2: 2rem;
+  --font-size3: 3rem;
+  --font-size4: 4rem;
+  --font-size5: 5rem;
+}
+
 html {
   z-index: -100;
   max-width: 1600px;
+  padding-bottom: 12rem;
 
   /*Code sourced form Stackoverflow:display:
   https://stackoverflow.com/questions/43186015/css-hide-scroll-bar-but-have-element-scrollable*/
@@ -21,18 +34,6 @@ html {
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-}
-
-:root {
-  --border-radius10: 10px;
-  --border-radius15: 15px;
-  --border-radius30: 30px;
-  --border-radius50: 50%;
-  --font-size1: 1rem;
-  --font-size2: 2rem;
-  --font-size3: 3rem;
-  --font-size4: 4rem;
-  --font-size5: 5rem;
 }
 
 /* Tool tips styling */
@@ -85,6 +86,35 @@ p {
   border-radius: 10px;
   background: rgba(198, 228, 247, 75%)
 }
+
+/* This class rule sets elements to invisible until this class is removed from their classList
+    in javascript at the end of the parallax hero animation
+*/
+.section {
+  display: none;
+}
+
+/* Button styles */
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  border: 3px solid #34b1eb; /* Light blue */
+  border-radius: 50%;
+  margin: 1rem;
+  padding: 0.3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+  background: #c6e4f7;
+}
+
 /* Parallax Hero Animation styling */
 
 /*Code sourced from this YouTube video
@@ -156,34 +186,19 @@ transform: translateZ(-80px) scale(3);
   object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
 }
 
-/* Sets elements to invisible until this class is removed from their classList
-    in javascript at the end of the parallax hero animation */
-.section {
-  display: none;
-}
-
 /* TODO Searching for the setting to stop the nav and header from scrolling off the page */
 .navContentContainer {
-  position: relative;
   margin: 0 auto 0.1rem;
 }
 
-section nav #nav-bar {
-  position: fixed;
-  top: 0;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: center;
-}
-
 #nav-bar {
-  position: sticky; /* Brings nav in front of parallax wrapper along with h2*/
-  top: 0;
-  left: 0;
   display: flex;
+  z-index: 10;
+  position: fixed;
+  top: -5.15rem;
   width: 100%;
   height: minmax(40vh);
+  justify-content: center;
 }
 
 #icon {
@@ -235,20 +250,39 @@ section nav #nav-bar {
 }
 
 /* App's main title */
-.appTitle {
-  /* position: sticky; */
+/* .appTitle {
   width: 100%;
   background: #f7f1d0;
   font-size: 3rem;
   text-align: center;
   border: 2px solid red;
-  margin: 0 auto;
+  margin: 5rem auto;
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.75), 0 6px 10px 0 rgba(0, 0, 0, 1);
-  }
+  } */
+
+  /* New Entry section styles */
+
+#newEntryHeading {
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 8; */
+  margin: -10rem auto 1.5rem;
+  font-size: 3.5rem;
+}
+
+#newEntry {
+  text-align: center; /*centers the project-items*/
+  margin: 10rem auto;
+}
 
 /* Add characters section styles*/
+
+#addCharacterBtn {
+  margin: 0 auto;
+}
 
 /* Modal Container */
 .modal {
@@ -258,7 +292,7 @@ section nav #nav-bar {
   left: 25%;
   top: 25vh;
   width: 50%;
-  height: 25%;
+  height: auto;
   border-radius: 10px;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.3);
@@ -280,10 +314,19 @@ section nav #nav-bar {
 
 /* Modal closing X */
 .close {
-  color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  margin: 0.75rem auto;
+  background: #808080;
+  color: #dbd9d9;
   float: right;
   font-size: 28px;
   font-weight: bold;
+
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -294,6 +337,7 @@ section nav #nav-bar {
   cursor: pointer;
 }
 
+/* Modal form element styles */
 form {
   display: grid;
   grid-template-columns: 1;
@@ -327,26 +371,10 @@ form {
 #modalButtons {
   grid-area: buttons;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* New Entry section styles */
-
-#newEntryHeading {
-  margin: -10rem auto 1.5rem;
-  font-size: 3.5rem;
-}
-
-#newEntry {
-  text-align: center; /*centers the project-items*/
-  margin: 10rem auto;
+  padding: 1.5rem;
 }
 
 /* Add character section */
-#addCharacterBtn {
-  font-size: 1rem;
-}
 
 #characterList {
   display: flex;
@@ -369,71 +397,41 @@ form {
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
-.note-items {
-  display: inline-grid;
-  grid-template-columns: auto;
-  margin: 1rem auto;
-  width: 100%;
-  height: auto;
+/* Text entry for setting, description, dialogue */
 
-}
-
-.note-link {
-  display: grid;
-  text-align: center;
-  background-color: black;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.05rem;
-  padding-bottom: 0.5rem;
-  text-decoration: none;
-  color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.75), 0 6px 15px 0 rgba(0, 0, 0, 1);
-}
-
-/* .form-control */
-
-.button {
-  width: 6rem;
-  height: 6rem;
-  border: 3px solid #34b1eb; /* Light blue */
-  border-radius: 50%;
-  margin: 1rem;
-  padding: 0;
-  cursor: pointer;
-  font-size: .75rem;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-}
-
-.button:hover {
-  background: #c6e4f7;
-}
-
-fieldset {
-  border: none;
-}
-
-#note-cat-title {
-  margin: 0 10rem; /*Not working*/
-}
-
-#deleteBtn,
-#editBtn {
+#categories {
   display: flex;
+  align-items: center;
   justify-content: center;
-  width: 40%;
-  padding: 0.25rem;
-  margin: 1rem auto;
-  letter-spacing: 0.05rem;
-  border-radius: 5px;
-  border: 3px solid #c6e4f7;
-  cursor: pointer;
+}
 
+/* Character Cards Section */
+
+ul .characterCards {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100px;
+  margin: 3rem auto;
+}
+
+.charCard {
+  display: flex;
+  flex-direction: column;
+  background: #34b1eb;
+  margin: 1rem auto;
+  padding: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#deleteEditArchiveBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #deleteBtn:hover,
-#editBtn:hover {
+#editBtn:hover, #archiveBtn:hover {
   background: #c6e4f7;
 }
 
