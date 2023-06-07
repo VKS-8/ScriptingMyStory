@@ -194,11 +194,6 @@ transform: translateZ(-80px) scale(3);
 }
 
 /* TODO Searching for the setting to stop the nav and header from scrolling off the page */
-.navContentContainer {
-  position: relative;
-  z-index: 99;
-  margin: 0 auto 0.1rem;
-}
 
 #nav-bar {
   display: flex;
@@ -379,7 +374,7 @@ form {
 /* Add character section */
 
 #addCharacterContainer {
-  
+
 }
 
 /* Character button container */
