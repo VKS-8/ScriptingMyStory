@@ -195,8 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 }
 
-// Append character button to page as user creates a new character
 // Add new character
+// Append character button to page as user creates a new character
 
 const characterModal = document.querySelector('#characterModal');
 const addCharacterButton = document.querySelector('#addCharacterBtn');
@@ -257,6 +257,8 @@ function createCharacterButton(character) {
   charactersContainer.appendChild(button);
 }
 
+// Allows user to paste the URL of the character image into input
+// in the Add Character Modal form
 imageInput.addEventListener("paste", (event) => {
   const clipboardData = event.clipboardData || window.Clipboard;
   const pastedText = clipboardData.getData("text");
