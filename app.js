@@ -146,10 +146,7 @@ function transitionHeroHeader() {
   }
 }
 
-// Wrapper div effects
-
-const wrapper = document.querySelector('.wrapper');
-console.log(wrapper);
+// Wrapper div set to display none and display sections
 
 window.addEventListener('scroll', removeWrapper);
 
@@ -158,25 +155,15 @@ removeWrapper();
 function removeWrapper() {
 
   const wrapper = document.querySelector('.wrapper');
+  setTimeout(() =>wrapper.style.display = 'none', 18000);
 
-  setTimeout(() => wrapper.style.display = 'none', 18000);
+  
+
   setTimeout(() => nav.classList.remove('section'), 18000);
   setTimeout(() => appTitle.classList.remove('section'), 18000);
-  setTimeout(() => newNote.classList.remove('section'), 18000);
-  setTimeout(() => div.classList.remove('section'), 18000);
-  setTimeout(() => deleteEditBtns.remove('section'), 18000);
-
-  // setTimeout(() =>
-  //   wrapper.style.display = 'none',
-  //   nav.classList.remove('section'),
-  //   appTitle.classList.remove('section'),
-  //   newNote.classList.remove('section'),
-  //   div.classList.remove('section'),
-  //   deleteEditBtns.remove('section'), 18000);
-
-
-
-
+  setTimeout(() => newEntry.classList.remove('section'), 18000);
+  setTimeout(() => sections.classList.remove('section'), 18000);
+}
 
 // My attempt to set active state on the nav link when in viewport
 // Code sourced from here:
