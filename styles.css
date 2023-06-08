@@ -195,14 +195,20 @@ transform: translateZ(-80px) scale(3);
 
 /* TODO Searching for the setting to stop the nav and header from scrolling off the page */
 
-#nav-bar {
+#nav {
   display: flex;
-  z-index: 10;
   position: fixed;
-  top: -0.15rem;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  justify-content: center;
   width: 100%;
   height: minmax(40vh);
-  justify-content: center;
+}
+
+#nav-bar {
+  display: flex;
+  width: 100%;
 }
 
 #icon {
