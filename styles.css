@@ -41,6 +41,11 @@ html {
   scrollbar-width: none;  /* Firefox */
 }
 
+body {
+  position: relative;
+  z-index: -99;
+}
+
 /* Tool tips styling */
 .toolTip {
   position: relative;
@@ -196,7 +201,7 @@ transform: translateZ(-80px) scale(3);
 /* TODO Searching for the setting to stop the nav and header from scrolling off the page */
 
 #nav {
-  display: flex;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -204,9 +209,10 @@ transform: translateZ(-80px) scale(3);
   justify-content: center;
   width: 100%;
   height: minmax(40vh);
+  overflow: hidden;
 }
 
-#nav-bar {
+#navBar {
   display: flex;
   width: 100%;
 }
