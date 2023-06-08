@@ -197,7 +197,7 @@ transform: translateZ(-80px) scale(3);
 /* TODO Searching for the setting to stop the nav and header from scrolling off the page */
 .navContentContainer {
   position: fixed;
-  top: -9vh;
+  top: -11vh;
   left: 0;
   z-index: 99;
   width: 100%;
