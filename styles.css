@@ -200,6 +200,7 @@ transform: translateZ(-80px) scale(3);
   top: -9vh;
   left: 0;
   z-index: 99;
+  width: 100%;
   margin: 0 auto 0.1rem;
 }
 
