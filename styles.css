@@ -442,21 +442,31 @@ textarea {
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Character Cards Section */
+/* Sections for character cards, setting cards, description cards,
+    dialogue cards */
 
 
-.charCardsSectionTitle {
+.charCardsSectionTitle,
+.settingCardsSectionTitle,
+.descriptionCardsSectionTitle,
+.dialogueCardsSectionTitle {
   width: 100%;
 }
 
-.characterCards {
+.characterCards,
+.settingCards,
+.descriptionCards,
+.dialogueCards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 2rem;
 }
 
-.charCardContent {
+.charCardContent,
+.settingCardContent,
+.descrCardContent,
+.dialogueCardContent {
   position: relative;
   justify-content: center;
   align-items: center;
@@ -469,13 +479,19 @@ textarea {
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
-.charCardContent img {
+.charCardContent img,
+.settingCardContent img,
+.descrCardContent img,
+.dialogueCardContent img {
   object-fit: cover;
   width: 95%;
   border-radius: 10px;
 }
 
-.charCardContent a {
+.charCardContent a,
+.settingCardContent a,
+.descrCardContent a,
+.dialogueCardContent a {
   position: absolute;
   left: 25%;
   margin: 0 auto;
