@@ -397,7 +397,8 @@ form {
   padding: 2rem;
   color: black;
   cursor: pointer;
-  font-size: 2.75rem;
+  font-size: 2rem;
+  text-align: center;
   align-items: center;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
@@ -455,33 +456,35 @@ textarea {
   margin: 2rem;
 }
 
-.charCard {
-  
-}
-
 .charCardContent {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-template-areas: 
-  "name"
-  "image"
-  "link"
-  "details";
+  grid-template-areas:
+  "CCimage"
+  "link";
   justify-content: center;
   align-items: center;
   background: #34b1eb;
   height: 500px;
   width: 350px;
   margin: 1rem auto;
-  padding: 3rem;
+  padding: 1.25rem 1rem 3rem;
   border-radius: 10px;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
-.charCard img {
-  grid-area: image;
+.charCardContent img {
+  grid-area: CCimage;
   object-fit: cover;
+  width: 95%;
+  border-radius: 10px;
+}
+
+.charCardContent a {
+  grid-area: link;
+  top: 0;
+  margin: 0 auto;
 }
 
 #deleteEditArchiveBtns {
