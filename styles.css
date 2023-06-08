@@ -457,12 +457,7 @@ textarea {
 }
 
 .charCardContent {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-  "CCimage"
-  "link";
+  position: relative;
   justify-content: center;
   align-items: center;
   background: #34b1eb;
@@ -475,16 +470,21 @@ textarea {
 }
 
 .charCardContent img {
-  grid-area: CCimage;
   object-fit: cover;
   width: 95%;
   border-radius: 10px;
 }
 
 .charCardContent a {
-  grid-area: link;
-  top: 0;
+  position: absolute;
+  left: 25%;
   margin: 0 auto;
+  color: #fff;
+  background: #808080;
+  padding: 1rem;
+  border-radius: 10px;
+  opacity: 75%;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3)
 }
 
 #deleteEditArchiveBtns {
