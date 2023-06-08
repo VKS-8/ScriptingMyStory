@@ -55,9 +55,6 @@
 //   }
 // }
 
-// Add new character
-
-
 //Code sourced from:
 // 50 Projects In 50 Days - HTML, CSS & JS - 6 Scroll Animation || By Frontend Genius || #html #css #js
 // https://www.youtube.com/watch?v=Yuc0UcHyFXc
@@ -77,9 +74,9 @@ function transitionTextBox() {
     const textBoxTop = textBox.getBoundingClientRect().top;
 
     if(textBoxTop < triggerBottom) {
-      textBox.classList.add('transition-box')
+      textBox.classList.add('transitionBox')
     } else {
-      textBox.classList.remove('transition-box');
+      textBox.classList.remove('transitionBox');
     }
 
   });
@@ -147,25 +144,50 @@ function transitionHeroHeader() {
   }
 }
 
-const wrapper = document.querySelector('.wrapper');
-console.log(wrapper);
+// Wrapper div set to display none and display sections
 
-window.addEventListener('scroll', removeWrapper);
+// window.addEventListener('scroll', removeWrapper);
 
 removeWrapper();
 
 function removeWrapper() {
 
   const wrapper = document.querySelector('.wrapper');
-
   setTimeout(() => wrapper.style.display = 'none', 18000);
+
+  setTimeout(() => nav.classList.remove('display'), 18000);
+  setTimeout(() => newSceneEntry.classList.remove('display'), 18000);
+  setTimeout(() => sections.classList.remove('display'), 18000);
 
 }
 
 
 
-
 // My attempt to set active state on the nav link when in viewport
+
+const section = document.querySelector('section');
+console.log(section);
+
+window.addEventListener('scroll', setActive);
+
+setActive();
+
+function setActive() {
+  const triggerBottom = window.innerHeight / 5 * 4;
+  const sections = document.querySelectorAll('section');
+
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+
+    if(sectionTop < triggerBottom) {
+      section.classList.add('active')
+    } else {
+      section.classList.remove('active');
+    }
+  });
+}
+
+
 // Code sourced from here:
 // https://www.youtube.com/watch?v=QOWq3_zpOK4
 // YouTube channel: dcode -- Detect DOM Changes With The Intersection Observer API - JavaScript Tutorial
@@ -200,14 +222,14 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 // Append character button to page as user creates a new character
-let characterBtn = document.querySelectorAll('.characterBtn');
+// Add new character
 
 const characterModal = document.querySelector('#characterModal');
 const addCharacterButton = document.querySelector('#addCharacterBtn');
 const closeButton = document.querySelector('.close');
 const addAnotherButton = document.querySelector('#addAnotherBtn');
 const characterForm = document.querySelector('#characterForm');
-const addImage = document.querySelector('imageInput')
+const addImage = document.querySelector('characterImageInput')
 
 addCharacterButton.addEventListener('click', () => {
   characterModal.style.display = 'block';
@@ -225,8 +247,8 @@ addAnotherButton.addEventListener('click', () => {
 characterForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const nameInput = document.querySelector('#nameInput');
-  const imageInput = document.querySelector('#imageInput');
+  const nameInput = document.querySelector('#characterNameInput');
+  const imageInput = document.querySelector('#characterImageInput');
 
   const character = {
     name: nameInput.value,

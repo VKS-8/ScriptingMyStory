@@ -11,11 +11,19 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600;900&display=swap" rel="stylesheet">
+  <!-- Sets page back to top on refresh to align the parallax text to be in the correct place -->
+  <!-- Code Sourced from: https://stackoverflow.com/questions/30018960/cant-force-page-to-scroll-to-top-on-refresh-on-chrome -->
+  <script>
+    window.onbeforeunload = function () {
+    window.scrollTo(0,0);
+};</script>
   <script defer src="app.js">
   </script>
 </head>
 <body class="parallaxBackground">
-  <div class="wrapper">
+   <div class="wrapper">
     <!-- Hero header and scroll container-->
     <header id="hero" class="hero-section">
       <img class="middleground hero-section" src="/images/transparentBkgrd/james-todd-E9wD5lwKveM-unsplash-transparent-background-edgeSmudge.png" alt="silhouette of boys playing a mound of dirt"></img>
@@ -23,122 +31,206 @@
       <div><h1 id="heroHeader">Scripting My Story</h1></div>
     </header>
   </div>
-  <div class="navContentContainer">
+  <section class="navContentContainer">
     <!-- Nav -->
-    <section id="nav">
+    <div id="nav" class="display">
       <nav id="nav-bar">
         <a href="#" id="icon" class="nav-link">Icon</a>
+
         <a href="#characters" class="nav-link">Characters</a>
         <a href="#settings" class="nav-link">Settings</a>
         <a href="#description" class="nav-link">Description</a>
         <a href="#dialogue" class="nav-link">Dialogue</a>
+        <a href="#dialogue" class="nav-link">Full Script</a>
       </nav>
-    </section>
+    </div>
+  </section>
 
-
-    <h2 class="notesHeading">Scripting My Story</h2>
-  </div>
     <!-- Add New Note to Script -->
     <section>
-      <form>
-        <fieldset>
-          <section id="new-note">
-            <div id="new-note-heading">
-              <h2>New Entry</h2>
-            </div>
-            <!-- Select a character to write new note about or create new character -->
-            <div id="charactersContainer">
-              <div id="characters" class="button">
-              </div>
-              <!-- Button will populate for ease of access as a character is created -->
-              <button id="addCharacterBtn">Add Character</button>
-              <div id="characterModal" class="modal">
-                <div class="modalContent">
-                  <span class="close">&times;</span>
-                  <form id="characterForm">
-                    <label for="nameInput" ><!--change to screen reader only "Name required" --></label>
-                    <input type="text" id="nameInput" placeholder="Enter name" required>
-                    <label for="imageInput" required><!--change to screen reader only "Add Image URL required"-->
-                      <div class="toolTip">
-                        <span class="toolTipText">
-                          Add placeholder image if you don't have an image ready
-                        </span>
-                      </div>
-                    </label>
-                    <input type="text" id="imageInput"  placeholder="Enter URL for character image" title="Fix tooltip add placeholder image url if no image is ready yet">
-                    <button type="submit">Add Character</button>
-                    <button type="button" id="addAnotherBtn">Add Another Character</button>
-                  </form>
+      <!-- <h2 id="appTitle" class="appTitle section">Scripting My Story</h2> -->
+      <section id="newSceneEntry" class="display">
+        <div id="newSceneEntryHeading">
+          <h3>New Scene Entry</h3>
+        </div>
+        <!-- Select a character button to write new note about or create new character -->
+        <div id="charactersContainer">
+          <div id="addedCharacterContainer">
+            <!-- Button will populate for ease of access as a character is created -->
+          <button id="addCharacterBtn" class="button">
+            Add <br>
+            Character
+          </button>
+          <ul id="characterList">
+          <a href="#roseLancaster" id="roseLancaster" class="button">Rose <br> Lancaster</a>
+          <a href="#character2" id="character2" class="button">Char2</a>
+          <a href="#character3" id="character3" class="button">Char3</a>
+          <a href="#character4" id="character4" class="button">Char4</a>
+          <a href="#character5" id="character5" class="button">Char5</a>
+          <a href="#character6" id="character6" class="button">Char6</a>
+          <a href="#character7" id="character7" class="button">Char7</a>
+          <a href="#character8" id="character8" class="button">Char8</a>
+          </ul>
+        </div>
+
+        <div id="characterModal" class="modal">
+          <div class="modalContent">
+            <span class="close">
+              &times;
+            </span>
+            <form id="characterForm">
+              <label for="characterNameInput" ><!--change to screen reader only "Name required" -->
+              </label>
+              <input type="text" id="characterNameInput" placeholder="Enter name" required>
+              <label for="characterImageInput" required><!--change to screen reader only "Add Image URL required"-->
+                <div class="toolTip">
+                  <span class="toolTipText">
+                    Add placeholder image if you don't have an image ready
+                  </span>
                 </div>
-            </div>
-            <!-- Text area to write new note information for each category -->
-            <div class="new-notes form-control">
+              </label>
+              <input type="text" id="characterImageInput"  placeholder="Enter URL for character image" title="Fix tooltip add placeholder image url if no image is ready yet">
+              <div id="modalButtons">
+                <button type="submit" class="button">
+                  Add Character
+                </button>
+                <button type="button" id="addAnotherBtn" class="button">
+                  Add Another Character
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Text area to write new note information for each category -->
+        <form>
+          <fieldset>
+            <div class="newNote">
               <textarea
-                id="new-entry"
+                id="newEntry"
                 class="inputTextArea"
-                name="new-entry"
+                name="newEntry"
                 placeholder="Enter new entry then click appropriate button to add to the correct category">
               </textarea>
             </div>
-            <!-- Buttons append textArea text to select category -->
-            <div id="categories">
-              <button type="button"
-                id="add-new-character-button"
-                class="button">
-                  New Character
-              </button>
-              <button type="button"
-                id="add-desciption-button"
-                class="button">
-                  Description
-              </button>
-              <button type="button"
-                id="add-setting-button"
-                class="button">
-                  Setting
-              </button>
-              <button type="button"
-                id="add-dialogue-button"
-                class="button">
-                  Dialogue
-              </button>
-            </div>
-          </section>
-        </fieldset>
-      </form>
+          </fieldset>
+        </form>
+        <!-- Buttons append textArea text to select category -->
+        <div id="sceneCategories">
+          <button type="button"
+            id="addDesciptionBtn"
+            class="button">
+              Description
+          </button>
+          <button type="button"
+            id="addSettingBtn"
+            class="button">
+              Setting
+          </button>
+          <button type="button"
+            id="addDialogueBtn"
+            class="button">
+              Dialogue
+          </button>
+        </div>
+      </section>
     </section>
-    <div id="sections">
-      <section id="notes">
-        <div class="note-items">
 
-          <a
-            id="notes"
-            class="note-link"
-            href="#new-note"
-            target="_blank">
+    <div id="sections" class="display">
+      <section id="characterCardsContainer">
+        <h3 class="charCardsSectionTitle">My Characters</h3>
+        <ul class="characterCards">
+        <div class="charCardContent">
+          <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
+          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+            </a>
+        </div>
+        <div class="charCardContent">
+          <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
+          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+            </a>
+        </div>
+        <div class="charCardContent">
+          <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
+          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+            </a>
+        </div>
+        <div class="charCardContent">
+          <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
+          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+            </a>
+        </div>
+        <div class="charCardContent">
+          <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
+          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+            </a>
+        </div>
 
-            <h3
-              id="note-cat-title">
-                Story Title/Section/Chapter/Etc
-            </h3>
-          </a>
-            <br>
+        </ul>
+        <div id="deleteEditArchiveBtns">
+          <button
+            type="button"
+            id="deleteBtn" class="button">
+              Delete <br>
+              Character
+          </button>
+          <button
+            type="button"
+            id="editBtn" class="button">
+              Edit <br>
+              Character
+          </button>
+          <button
+            type="button"
+            id="archiveBtn" class="button">
+              Archive <br>
+              Character
+          </button>
+        </div>
+      </section>
+      <section id="settingCardsContainer">
+        <h3 class="settingCardsSectionTitle">Scene Settings</h3>
+        <ul class="settingCards">
+        <div class="settingCardContent">
+          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
+          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
+            </a>
+        </div>
+        <div class="settingCardContent">
+          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
+          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
+            </a>
+        </div>
+        <div class="settingCardContent">
+          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
+          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
+            </a>
+        </div>
+        <div class="settingCardContent">
+          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
+          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
+            </a>
+        </div>
 
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-          <div
-            class="delete-edit-buttons">
-              <button
-                type="button"
-                id="delete-btn">
-                  Delete Entry
-              </button>
-              <button
-                type="button"
-                id="edit-btn">
-                  Edit Entry
-              </button>
-          </div>
+        </ul>
+        <div id="deleteEditArchiveBtns">
+          <button
+            type="button"
+            id="deleteSettingBtn" class="button">
+              Delete <br>
+              Character
+          </button>
+          <button
+            type="button"
+            id="editSettingBtn" class="button">
+              Edit <br>
+              Character
+          </button>
+          <button
+            type="button"
+            id="archiveSettingBtn" class="button">
+              Archive <br>
+              Character
+          </button>
         </div>
       </section>
     </div>
