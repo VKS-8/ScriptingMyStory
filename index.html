@@ -49,61 +49,61 @@
     <!-- Add New Note to Script -->
     <section>
       <!-- <h2 id="appTitle" class="appTitle section">Scripting My Story</h2> -->
-      <form>
-        <fieldset>
-          <section id="newSceneEntry" class="display">
-            <div id="newSceneEntryHeading">
-              <h3>New Scene Entry</h3>
-            </div>
-            <!-- Select a character button to write new note about or create new character -->
-            <div id="charactersContainer">
-              <div id="addedCharacterContainer">
-                <!-- Button will populate for ease of access as a character is created -->
-              <button id="addCharacterBtn" class="button">
-                Add <br>
-                Character
-              </button>
-              <ul id="characterList">
-              <a href="#roseLancaster" id="roseLancaster" class="button">Rose <br> Lancaster</a>
-              <a href="#character2" id="character2" class="button">Char2</a>
-              <a href="#character3" id="character3" class="button">Char3</a>
-              <a href="#character4" id="character4" class="button">Char4</a>
-              <a href="#character5" id="character5" class="button">Char5</a>
-              <a href="#character6" id="character6" class="button">Char6</a>
-              <a href="#character7" id="character7" class="button">Char7</a>
-              <a href="#character8" id="character8" class="button">Char8</a>
-              </ul>
-            </div>
+      <section id="newSceneEntry" class="display">
+        <div id="newSceneEntryHeading">
+          <h3>New Scene Entry</h3>
+        </div>
+        <!-- Select a character button to write new note about or create new character -->
+        <div id="charactersContainer">
+          <div id="addedCharacterContainer">
+            <!-- Button will populate for ease of access as a character is created -->
+          <button id="addCharacterBtn" class="button">
+            Add <br>
+            Character
+          </button>
+          <ul id="characterList">
+          <a href="#roseLancaster" id="roseLancaster" class="button">Rose <br> Lancaster</a>
+          <a href="#character2" id="character2" class="button">Char2</a>
+          <a href="#character3" id="character3" class="button">Char3</a>
+          <a href="#character4" id="character4" class="button">Char4</a>
+          <a href="#character5" id="character5" class="button">Char5</a>
+          <a href="#character6" id="character6" class="button">Char6</a>
+          <a href="#character7" id="character7" class="button">Char7</a>
+          <a href="#character8" id="character8" class="button">Char8</a>
+          </ul>
+        </div>
 
-            <div id="characterModal" class="modal">
-              <div class="modalContent">
-                <span class="close">
-                  &times;
-                </span>
-                <form id="characterForm">
-                  <label for="characterNameInput" ><!--change to screen reader only "Name required" -->
-                  </label>
-                  <input type="text" id="characterNameInput" placeholder="Enter name" required>
-                  <label for="characterImageInput" required><!--change to screen reader only "Add Image URL required"-->
-                    <div class="toolTip">
-                      <span class="toolTipText">
-                        Add placeholder image if you don't have an image ready
-                      </span>
-                    </div>
-                  </label>
-                  <input type="text" id="characterImageInput"  placeholder="Enter URL for character image" title="Fix tooltip add placeholder image url if no image is ready yet">
-                  <div id="modalButtons">
-                    <button type="submit" class="button">
-                      Add Character
-                    </button>
-                    <button type="button" id="addAnotherBtn" class="button">
-                      Add Another Character
-                    </button>
-                  </div>
-                </form>
+        <div id="characterModal" class="modal">
+          <div class="modalContent">
+            <span class="close">
+              &times;
+            </span>
+            <form id="characterForm">
+              <label for="characterNameInput" ><!--change to screen reader only "Name required" -->
+              </label>
+              <input type="text" id="characterNameInput" placeholder="Enter name" required>
+              <label for="characterImageInput" required><!--change to screen reader only "Add Image URL required"-->
+                <div class="toolTip">
+                  <span class="toolTipText">
+                    Add placeholder image if you don't have an image ready
+                  </span>
+                </div>
+              </label>
+              <input type="text" id="characterImageInput"  placeholder="Enter URL for character image" title="Fix tooltip add placeholder image url if no image is ready yet">
+              <div id="modalButtons">
+                <button type="submit" class="button">
+                  Add Character
+                </button>
+                <button type="button" id="addAnotherBtn" class="button">
+                  Add Another Character
+                </button>
               </div>
-            </div>
-            <!-- Text area to write new note information for each category -->
+            </form>
+          </div>
+        </div>
+        <!-- Text area to write new note information for each category -->
+        <form>
+          <fieldset>
             <div class="newNote">
               <textarea
                 id="newEntry"
@@ -112,55 +112,56 @@
                 placeholder="Enter new entry then click appropriate button to add to the correct category">
               </textarea>
             </div>
-            <!-- Buttons append textArea text to select category -->
-            <div id="categories">
-              <button type="button"
-                id="addDesciptionBtn"
-                class="button">
-                  Description
-              </button>
-              <button type="button"
-                id="addSettingBtn"
-                class="button">
-                  Setting
-              </button>
-              <button type="button"
-                id="addDialogueBtn"
-                class="button">
-                  Dialogue
-              </button>
-            </div>
-          </section>
-        </fieldset>
-      </form>
+          </fieldset>
+        </form>
+        <!-- Buttons append textArea text to select category -->
+        <div id="sceneCategories">
+          <button type="button"
+            id="addDesciptionBtn"
+            class="button">
+              Description
+          </button>
+          <button type="button"
+            id="addSettingBtn"
+            class="button">
+              Setting
+          </button>
+          <button type="button"
+            id="addDialogueBtn"
+            class="button">
+              Dialogue
+          </button>
+        </div>
+      </section>
     </section>
+    
     <div id="sections" class="display">
       <section id="characterCardsContainer">
         <h3 class="charCardsSectionTitle">My Characters</h3>
         <ul class="characterCards">
         <div class="charCardContent">
           <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
-          <a href="#character1" id="card1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
             </a>
         </div>
         <div class="charCardContent">
           <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
-          <a href="#character1" id="card1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
             </a>
         </div>
         <div class="charCardContent">
           <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
-          <a href="#character1" id="card1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
             </a>
         </div>
         <div class="charCardContent">
           <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
-          <a href="#character1" id="card1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
             </a>
         </div>
         <div class="charCardContent">
           <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
-          <a href="#character1" id="card1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
             </a>
         </div>
 
@@ -181,6 +182,52 @@
           <button
             type="button"
             id="archiveBtn" class="button">
+              Archive <br>
+              Character
+          </button>
+        </div>
+      </section>
+      <section id="settingCardsContainer">
+        <h3 class="settingCardsSectionTitle">My Characters</h3>
+        <ul class="settingCards">
+        <div class="settingCardContent">
+          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
+          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
+            </a>
+        </div>
+        <div class="settingCardContent">
+          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
+          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
+            </a>
+        </div>
+        <div class="settingCardContent">
+          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
+          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
+            </a>
+        </div>
+        <div class="settingCardContent">
+          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
+          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
+            </a>
+        </div>
+        
+        </ul>
+        <div id="deleteEditArchiveBtns">
+          <button
+            type="button"
+            id="deleteSettingBtn" class="button">
+              Delete <br>
+              Character
+          </button>
+          <button
+            type="button"
+            id="editSettingBtn" class="button">
+              Edit <br>
+              Character
+          </button>
+          <button
+            type="button"
+            id="archiveSettingBtn" class="button">
               Archive <br>
               Character
           </button>
