@@ -74,9 +74,9 @@ function transitionTextBox() {
     const textBoxTop = textBox.getBoundingClientRect().top;
 
     if(textBoxTop < triggerBottom) {
-      textBox.classList.add('transition-box')
+      textBox.classList.add('transitionBox')
     } else {
-      textBox.classList.remove('transition-box');
+      textBox.classList.remove('transitionBox');
     }
 
   });
@@ -161,7 +161,33 @@ function removeWrapper() {
 
 }
 
+
+
 // My attempt to set active state on the nav link when in viewport
+
+const section = document.querySelector('section');
+console.log(section);
+
+window.addEventListener('scroll', setActive);
+
+setActive();
+
+function setActive() {
+  const triggerBottom = window.innerHeight / 5 * 4;
+  const sections = document.querySelectorAll('section');
+
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+
+    if(sectionTop < triggerBottom) {
+      section.classList.add('active')
+    } else {
+      section.classList.remove('active');
+    }
+  });
+}
+
+
 // Code sourced from here:
 // https://www.youtube.com/watch?v=QOWq3_zpOK4
 // YouTube channel: dcode -- Detect DOM Changes With The Intersection Observer API - JavaScript Tutorial
