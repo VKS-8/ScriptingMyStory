@@ -406,7 +406,7 @@ form {
 
 /* Text entry for setting, description, dialogue */
 
-#categories {
+#sceneCategories {
   display: flex;
   align-items: center;
   justify-content: center;
