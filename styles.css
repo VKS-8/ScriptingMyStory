@@ -528,7 +528,7 @@ textarea {
 
 /* This transitions the text area box off the screen */
 
-.transition-box {
+.transitionBox {
   transform: translateX(0%);
   transition: transform 1s ease;
 }
@@ -538,7 +538,7 @@ textarea {
   transform: translateX(100%);
 } */
 
-.transition-box.transitionTextBox {
+.transitionBox.transitionTextBox {
   transform: translateX(150%);
 }
 
