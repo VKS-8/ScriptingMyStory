@@ -139,6 +139,7 @@ p {
 
 header {
   display: flex;
+  position: fixed;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -195,7 +196,9 @@ transform: translateZ(-80px) scale(3);
 
 /* TODO Searching for the setting to stop the nav and header from scrolling off the page */
 .navContentContainer {
-  position: relative;
+  position: fixed;
+  top: -9vh;
+  left: 0;
   z-index: 99;
   margin: 0 auto 0.1rem;
 }
@@ -203,8 +206,6 @@ transform: translateZ(-80px) scale(3);
 #nav-bar {
   display: flex;
   z-index: 10;
-  position: fixed;
-  top: -0.15rem;
   width: 100%;
   height: minmax(40vh);
   justify-content: center;
@@ -457,6 +458,7 @@ textarea {
 }
 
 .charCardContent {
+  display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -464,7 +466,7 @@ textarea {
   height: 500px;
   width: 350px;
   margin: 1rem auto;
-  padding: 1.25rem 1rem 3rem;
+  padding: 1.25rem 1rem;
   border-radius: 10px;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
@@ -477,7 +479,8 @@ textarea {
 
 .charCardContent a {
   position: absolute;
-  left: 25%;
+  top: 10%;
+  left: 30%;
   margin: 0 auto;
   color: #fff;
   background: #808080;
