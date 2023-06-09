@@ -260,17 +260,19 @@ addAnotherButton.addEventListener('click', () => {
 characterForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const nameInput = document.querySelector('#characterNameInput');
-  const imageInput = document.querySelector('#characterImageInput');
+  const characterNameInput = document.querySelector('#characterNameInput');
+  const characterImageInput = document.querySelector('#characterImageInput');
 
   const character = {
-    name: nameInput.value,
-    image: imageInput.value,
+    name: characterNameInput.value,
+    image: characterImageInput.value,
     additionalInfo: ""
   };
 
   createCharacterButton(character);
   characterForm.reset();
+
+  characterNameInput.focus();
 
   const shouldAddAnother = confirm('Do you want to add another character?');
   if (!shouldAddAnother) {
@@ -279,21 +281,21 @@ characterForm.addEventListener('submit', (e) => {
 });
 
 function createCharacterButton(character) {
-  const charactersContainer = document.querySelector('#charactersContainer');
+  const characterList = document.querySelector('#characterList');
 
-  const button = document.createElement('button');
-  button.innerHTML = `<img src='${character.image}' alt='${character.name}' class="characterImage">`;
-  button.classList.add('characterBtn');
+  const link = document.createElement('a');
+  link.setAttribute('href="#${character.name}" id="${character.name}" class="button').innerHTML = `${character.name}`;
+  // link.classList.add('button');
 
-  button.addEventListener("click", () => {
-    character.additionalInfo = prompt("Enter additional information about the character:");
-    // Update the DOM with the additional information
-    const infoParagraph = document.createElement("p");
-    infoParagraph.textContent = character.additionalInfo;
-    charactersContainer.appendChild(infoParagraph);
-  });
+  // link.addEventListener("click", () => {
+  //   character.additionalInfo = prompt("Enter additional information about the character:");
+  //   // Update the DOM with the additional information
+  //   const infoParagraph = document.createElement("p");
+  //   infoParagraph.textContent = character.additionalInfo;
+  //   charactersContainer.appendChild(infoParagraph);
+  // });
 
-  charactersContainer.appendChild(button);
+  characterList.appendChild(link);
 }
 
 imageInput.addEventListener("paste", (event) => {
