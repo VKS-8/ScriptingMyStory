@@ -207,9 +207,9 @@ transform: translateZ(-80px) scale(3);
 }
 
 #scrollToTopContainer {
+  display: none;
   position: sticky;
   z-index: 99;
-  border: 2px solid red;
 }
 
 #scrollToTopBtn {
@@ -218,7 +218,6 @@ transform: translateZ(-80px) scale(3);
   /* border-color: #808080; */
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
   opacity: 50%;
-  border: 2px solid red;
 }
 
 #scrollToTopImg {
@@ -227,8 +226,7 @@ transform: translateZ(-80px) scale(3);
   height: 5rem;
 }
 
-
-/* TODO Searching for the setting to stop the nav and header from scrolling off the page */
+/* TODO Search for the setting to stop the nav and header from scrolling off the page */
 #nav {
   position: sticky;
   top: -11vh;
@@ -236,7 +234,6 @@ transform: translateZ(-80px) scale(3);
   z-index: 99;
   width: 100%;
   margin: 0 auto 0.1rem;
-  border: 2px solid red;
 }
 
 #nav-bar {
