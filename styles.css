@@ -195,6 +195,16 @@ transform: translateZ(-80px) scale(3);
   object-fit: cover; /*------Gives correct aspect ration no matter screen size-----*/
 }
 
+#skipBtn {
+  position: absolute;
+  font-size: 2rem;
+  color: #808080;
+  border-color: #808080;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  opacity: 100%;
+}
+
+
 /* TODO Searching for the setting to stop the nav and header from scrolling off the page */
 .navContentContainer {
   position: fixed;

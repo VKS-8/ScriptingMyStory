@@ -59,28 +59,28 @@
 // 50 Projects In 50 Days - HTML, CSS & JS - 6 Scroll Animation || By Frontend Genius || #html #css #js
 // https://www.youtube.com/watch?v=Yuc0UcHyFXc
 
-const inputTextArea = document.querySelector('.inputTextArea');
-console.log(inputTextArea);
+// const inputTextArea = document.querySelector('.inputTextArea');
+// console.log(inputTextArea);
 
-window.addEventListener('scroll', transitionTextBox);
+// window.addEventListener('scroll', transitionTextBox);
 
-transitionTextBox();
+// transitionTextBox();
 
-function transitionTextBox() {
-  const triggerBottom = window.innerHeight / 10;
-  const textBoxes = document.querySelectorAll('.inputTextArea');
+// function transitionTextBox() {
+//   const triggerBottom = window.innerHeight / 10;
+//   const textBoxes = document.querySelectorAll('.inputTextArea');
 
-  textBoxes.forEach(textBox => {
-    const textBoxTop = textBox.getBoundingClientRect().top;
+//   textBoxes.forEach(textBox => {
+//     const textBoxTop = textBox.getBoundingClientRect().top;
 
-    if(textBoxTop < triggerBottom) {
-      textBox.classList.add('transitionBox')
-    } else {
-      textBox.classList.remove('transitionBox');
-    }
+//     if(textBoxTop < triggerBottom) {
+//       textBox.classList.add('transitionBox')
+//     } else {
+//       textBox.classList.remove('transitionBox');
+//     }
 
-  });
-}
+//   });
+// }
 
 // My attempt to rewrite this code for the wrapper layers
 
@@ -146,11 +146,15 @@ function transitionHeroHeader() {
 
 // Wrapper div set to display none and display sections
 
-// window.addEventListener('scroll', removeWrapper);
-
 removeWrapper();
 
 function removeWrapper() {
+
+  const skip = document.querySelector('#skipBtn');
+  setTimeout(() => skip.style.opacity = '70%', 1000);
+  setTimeout(() => skip.style.opacity = '40%', 2500);
+  setTimeout(() => skip.style.opacity = '10%', 5000);
+  setTimeout(() => skip.style.opacity = '0%', 7500);
 
   const wrapper = document.querySelector('.wrapper');
   setTimeout(() => wrapper.style.display = 'none', 18000);
@@ -158,10 +162,16 @@ function removeWrapper() {
   setTimeout(() => nav.classList.remove('display'), 18000);
   setTimeout(() => newSceneEntry.classList.remove('display'), 18000);
   setTimeout(() => sections.classList.remove('display'), 18000);
-
 }
 
-
+const skipHeroAnim = document.querySelector('#skipBtn');
+skipHeroAnim.addEventListener('click', ()=>{
+  const wrapperSkip = document.querySelector('.wrapper');
+  wrapperSkip.style.display = 'none';
+  nav.classList.remove('display');
+  newSceneEntry.classList.remove('display');
+  sections.classList.remove('display');
+});
 
 // My attempt to set active state on the nav link when in viewport
 
