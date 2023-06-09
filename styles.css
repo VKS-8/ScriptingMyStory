@@ -128,13 +128,13 @@ p {
   https://www.youtube.com/watch?v=mxHoPYFsTuk  4:50*/
 .wrapper {
   position: fixed; /* Sticks the wrapper behind the nav and h2; lets the nav stay fixed to top of page; BUT still causes nav to scroll off page SOOOOO*/
-  height: 250vh;
+  height: 200vh;
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 50px;
   scroll-behavior: smooth;
-  margin: -40rem auto;
+  margin: 0 auto;
 }
 
 header {
@@ -142,16 +142,17 @@ header {
   position: fixed;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: auto;
   width: 100%;
   transform-style: preserve-3d;
   z-index: -1;
+  border: 2px solid red;
 
 }
 
 #heroHeader {
   position: relative;
-  top: 40vh;
+  top: 0;
   width: 100%;
   color: #fff;
   font-size: 10rem;
@@ -162,7 +163,6 @@ header {
 
 /* Body background -- yellow notepad paper -- does not scroll */
 .parallaxBackground {
-  position: relative;
   content: "";
   background-image: url("https://github.com/VKS-8/Image-assests/blob/main/Note%20taking%20app-Image%20Assets/Screenshot%20(2286).png?raw=true");
   transform: translateZ(-100px);
@@ -197,6 +197,8 @@ transform: translateZ(-80px) scale(3);
 
 #skipBtn {
   position: absolute;
+  top:55%;
+  left: 45%;
   font-size: 2rem;
   color: #808080;
   border-color: #808080;
@@ -204,20 +206,41 @@ transform: translateZ(-80px) scale(3);
   opacity: 100%;
 }
 
+#scrollToTopContainer {
+  position: sticky;
+  z-index: 99;
+  border: 2px solid red;
+}
+
+#scrollToTopBtn {
+  height:5rem;
+  width: 5rem;
+  /* border-color: #808080; */
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  opacity: 50%;
+  border: 2px solid red;
+}
+
+#scrollToTopImg {
+  position: sticky;
+  right: 0;
+  height: 5rem;
+}
+
 
 /* TODO Searching for the setting to stop the nav and header from scrolling off the page */
-.nav {
-  position: fixed;
+#nav {
+  position: sticky;
   top: -11vh;
   left: 0;
   z-index: 99;
   width: 100%;
   margin: 0 auto 0.1rem;
+  border: 2px solid red;
 }
 
 #nav-bar {
   display: flex;
-  z-index: 10;
   width: 100%;
   height: minmax(40vh);
   justify-content: center;
