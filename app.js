@@ -162,6 +162,9 @@ function removeWrapper() {
   setTimeout(() => nav.classList.remove('display'), 18000);
   setTimeout(() => newSceneEntry.classList.remove('display'), 18000);
   setTimeout(() => sections.classList.remove('display'), 18000);
+
+  const scrollToTopBtn = document.querySelector('#scrollToTopContainer');
+  setTimeout(() => scrollToTopBtn.classList.remove('display'), 18000);
 }
 
 const skipHeroAnim = document.querySelector('#skipBtn');
