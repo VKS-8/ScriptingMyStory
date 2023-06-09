@@ -152,9 +152,9 @@ function removeWrapper() {
 
   const skip = document.querySelector('#skipBtn');
   setTimeout(() => skip.style.opacity = '70%', 1000);
-  setTimeout(() => skip.style.opacity = '40%', 2500);
-  setTimeout(() => skip.style.opacity = '10%', 5000);
-  setTimeout(() => skip.style.opacity = '0%', 7500);
+  setTimeout(() => skip.style.opacity = '40%', 1500);
+  setTimeout(() => skip.style.opacity = '10%', 2000);
+  setTimeout(() => skip.style.opacity = '0%', 2500);
 
   const wrapper = document.querySelector('.wrapper');
   setTimeout(() => wrapper.style.display = 'none', 18000);
