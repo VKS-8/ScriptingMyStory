@@ -157,8 +157,7 @@ function removeWrapper() {
   setTimeout(() => skip.style.opacity = '0%', 2500);
 
   const wrapper = document.querySelector('.wrapper');
-  setTimeout(() => wrapper.style.display = 'none', 18000);
-
+  setTimeout(() => wrapper.classList.add('display'), 18000);
   setTimeout(() => nav.classList.remove('display'), 18000);
   setTimeout(() => newSceneEntry.classList.remove('display'), 18000);
   setTimeout(() => sections.classList.remove('display'), 18000);
