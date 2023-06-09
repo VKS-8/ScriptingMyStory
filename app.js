@@ -1,303 +1,121 @@
-//welll.....it looks easier, but....
+document.addEventListener("DOMContentLoaded", function() {
+  // Dynamic Nav
+  const sections = [
+    { id: "section-1", title: "Section 1" },
+    { id: "section-2", title: "Section 2" },
+    { id: "section-3", title: "Section 3" },
+    { id: "section-4", title: "Section 4" },
+    // Add more sections as needed
+  ];
 
-// const inputTextArea = document.getElementsByClassName('inputTextArea');
-// console.log(inputTextArea);
+  const navList = document.getElementById("nav-list");
 
-// function displayTextArea(index) {
-//   for (let i = 0; i < inputTextArea.length; i++) {
-//     inputTextArea[i].style.display = "none";
-//   }
-//   inputTextArea[index].style.display = "block";
-// }
-
-//sourced from
-//http://www.javascriptkit.com/javatutors/scrolling-html-bookmark-javascript.shtml
-//& https://stackoverflow.com/questions/3163615/how-to-scroll-an-html-page-to-a-given-anchor#:~:text=The%20easiest%20way%20to%20to,your%20HTML%20navigation%20use%20%23NameOfTheSection%20.&text=This%20CSS%20method%20works%20great%20for%20me%20and%20is%20super%20elegant!
-//I couldn't find any reason to change the code since it works great as is
-
-// let anchorlinks = document.querySelectorAll('a[href^="#"]')
-
-// for (let item of anchorlinks) {
-//     item.addEventListener('click', (e)=> {
-//         let hashval = item.getAttribute('href')
-//         let target = document.querySelector(hashval)
-//         target.scrollIntoView({
-//             behavior: 'smooth',
-//             block: 'start'
-//         })
-//         history.pushState(null, null, hashval)
-//         e.preventDefault()
-//     })
-// }
-
-//or this which was sourced from
-//https://jsfiddle.net/jd7q25hg/12/
-//orignially found on stackoverflow
-//https://stackoverflow.com/questions/3163615/how-to-scroll-an-html-page-to-a-given-anchor#:~:text=The%20easiest%20way%20to%20to,your%20HTML%20navigation%20use%20%23NameOfTheSection%20.&text=This%20CSS%20method%20works%20great%20for%20me%20and%20is%20super%20elegant!
-
-// function ScrollTo(name) {
-//   //init thread
-//   ScrollToResolver(document.getElementById(name));
-// }
-
-// function ScrollToResolver(elem) {
-//   var jump = parseInt(elem.getBoundingClientRect().top * .2);
-//   document.body.scrollTop += jump;
-//   document.documentElement.scrollTop += jump;
-//   //lastjump detects anchor unreachable, also manual scrolling to cancel animation if scroll > jump
-//   if (!elem.lastjump || elem.lastjump > Math.abs(jump)) {
-//     elem.lastjump = Math.abs(jump);
-//     setTimeout(function() {
-//       ScrollToResolver(elem);
-//     }, "100");
-//   } else {
-//     elem.lastjump = null;
-//   }
-// }
-
-//Code sourced from:
-// 50 Projects In 50 Days - HTML, CSS & JS - 6 Scroll Animation || By Frontend Genius || #html #css #js
-// https://www.youtube.com/watch?v=Yuc0UcHyFXc
-
-// const inputTextArea = document.querySelector('.inputTextArea');
-// console.log(inputTextArea);
-
-// window.addEventListener('scroll', transitionTextBox);
-
-// transitionTextBox();
-
-// function transitionTextBox() {
-//   const triggerBottom = window.innerHeight / 10;
-//   const textBoxes = document.querySelectorAll('.inputTextArea');
-
-//   textBoxes.forEach(textBox => {
-//     const textBoxTop = textBox.getBoundingClientRect().top;
-
-//     if(textBoxTop < triggerBottom) {
-//       textBox.classList.add('transitionBox')
-//     } else {
-//       textBox.classList.remove('transitionBox');
-//     }
-
-//   });
-// }
-
-// My attempt to rewrite this code for the wrapper layers
-
-const foreground = document.querySelector('.foreground');
-console.log(foreground);
-
-window.addEventListener('scroll', transitionForeground);
-
-transitionForeground();
-
-function transitionForeground() {
-  const triggerBottom = window.innerHeight / 5 * 4;
-  const foreground = document.querySelector('.foreground');
-
-  const foregroundTop = foreground.getBoundingClientRect().top;
-
-  if(foregroundTop < triggerBottom) {
-    foreground.classList.add('transitionForeground')
-  } else {
-    foreground.classList.remove('transitionForeground');
-  }
-}
-
-const middleground = document.querySelector('.middleground');
-console.log(middleground);
-
-window.addEventListener('scroll', transitionMiddleground);
-
-transitionMiddleground();
-
-function transitionMiddleground() {
-  const triggerBottom = window.innerHeight / 5 * 4;
-  const middleground = document.querySelector('.middleground');
-
-  const middlegroundTop = middleground.getBoundingClientRect().top;
-
-  if(middlegroundTop < triggerBottom) {
-    middleground.classList.add('transitionMiddleground')
-  } else {
-    middleground.classList.remove('transitionMiddleground');
-  }
-}
-
-const heroHeader = document.querySelector('#heroHeader');
-console.log(heroHeader);
-
-window.addEventListener('scroll', transitionHeroHeader);
-
-transitionHeroHeader();
-
-function transitionHeroHeader() {
-  const triggerBottom = window.innerHeight / 5 * 4;
-  const heroHeader = document.querySelector('#heroHeader');
-
-  const heroHeaderTop = heroHeader.getBoundingClientRect().top;
-
-  if(heroHeaderTop < triggerBottom) {
-    heroHeader.classList.add('transitionHeroHeader')
-  } else {
-    heroHeader.classList.remove('transitionHeroHeader');
-  }
-}
-
-// Wrapper div set to display none and display sections
-
-removeWrapper();
-
-function removeWrapper() {
-
-  const skip = document.querySelector('#skipBtn');
-  setTimeout(() => skip.style.opacity = '70%', 1000);
-  setTimeout(() => skip.style.opacity = '40%', 1500);
-  setTimeout(() => skip.style.opacity = '10%', 2000);
-  setTimeout(() => skip.style.opacity = '0%', 2500);
-
-  const wrapper = document.querySelector('.wrapper');
-  setTimeout(() => wrapper.style.display = 'none', 18000);
-
-  setTimeout(() => nav.classList.remove('display'), 18000);
-  setTimeout(() => newSceneEntry.classList.remove('display'), 18000);
-  setTimeout(() => sections.classList.remove('display'), 18000);
-
-  const scrollToTopBtn = document.querySelector('#scrollToTopContainer');
-  setTimeout(() => scrollToTopBtn.classList.remove('display'), 18000);
-}
-
-const skipHeroAnim = document.querySelector('#skipBtn');
-skipHeroAnim.addEventListener('click', ()=>{
-  const wrapperSkip = document.querySelector('.wrapper');
-  wrapperSkip.style.display = 'none';
-  nav.classList.remove('display');
-  newSceneEntry.classList.remove('display');
-  sections.classList.remove('display');
-});
-
-// My attempt to set active state on the nav link when in viewport
-
-const section = document.querySelector('section');
-console.log(section);
-
-window.addEventListener('scroll', setActive);
-
-setActive();
-
-function setActive() {
-  const triggerBottom = window.innerHeight / 5 * 4;
-  const sections = document.querySelectorAll('section');
-
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-
-    if(sectionTop < triggerBottom) {
-      section.classList.add('active')
-    } else {
-      section.classList.remove('active');
-    }
+  sections.forEach(function(section) {
+    const listItem = document.createElement("li");
+    const link = document.createElement("a");
+    link.setAttribute("href", `#${section.id}`);
+    link.textContent = section.title;
+    listItem.appendChild(link);
+    navList.appendChild(listItem);
   });
-}
 
-
-// Code sourced from here:
-// https://www.youtube.com/watch?v=QOWq3_zpOK4
-// YouTube channel: dcode -- Detect DOM Changes With The Intersection Observer API - JavaScript Tutorial
-// and https://www.youtube.com/watch?v=gQ8WggeHoJU&list=PLQIg5ltqYKppPcnn-Anucd5vrkXP9Oh1Y&index=50
-// YouTube channel: Steve Griffith -- IntersectioObserver API
-
-document.addEventListener('DOMContentLoaded', () => {
-  let options = {
+  // Intersection Observer
+  const observerOptions = {
     root: null,
-    rootMargin: "-250px -1px",
-    threshold: 0.05
+    rootMargin: "0px",
+    threshold: 0.8,
   };
 
-  let observer = new IntersectionObserver(enterIntersection, options);
-    document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
-      console.log('watching', section.textContent);
-    });
+  const observer = new IntersectionObserver(handleIntersection, observerOptions);
+  const allSections = document.querySelectorAll("section");
+
+  allSections.forEach(function(section) {
+    observer.observe(section);
   });
 
-  function enterIntersection(entries) {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      console.log('intersecting');
-      console.log(entry.target);
-      console.log(entry.time, entry.intersectionRatio);
-      entry.target.classlist.add('.nav-link:active');
-    } else {
-      entry.target.classList.remove('nav-link:active');
-    }
-  });
-}
+  function handleIntersection(entries) {
+    entries.forEach(function(entry) {
+      const { target } = entry;
+      const navLink = document.querySelector(`a[href="#${target.id}"]`);
 
-// Append character button to page as user creates a new character
-// Add new character
+      if (entry.isIntersecting) {
+        target.classList.add("active");
+        navLink.classList.add("active");
+              } else {
+                target.classList.remove("active");
+                navLink.classList.remove("active");
+              }
+            });
+          }
 
-const characterModal = document.querySelector('#characterModal');
-const addCharacterButton = document.querySelector('#addCharacterBtn');
-const closeButton = document.querySelector('.close');
-const addAnotherButton = document.querySelector('#addAnotherBtn');
-const characterForm = document.querySelector('#characterForm');
-const addImage = document.querySelector('characterImageInput')
+          // Scroll-to-Top Button
+          const scrollToTopBtn = document.getElementById("scroll-to-top");
 
-addCharacterButton.addEventListener('click', () => {
-  characterModal.style.display = 'block';
-});
+          function toggleScrollToTopButton() {
+            if (window.scrollY > window.innerHeight) {
+              scrollToTopBtn.classList.remove("hidden");
+            } else {
+              scrollToTopBtn.classList.add("hidden");
+            }
+          }
 
-closeButton.addEventListener('click', () => {
-  characterModal.style.display = 'none';
-  characterForm.reset();
-});
+          function scrollToTop() {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }
 
-addAnotherButton.addEventListener('click', () => {
-  characterForm.reset();
-});
+          scrollToTopBtn.addEventListener("click", scrollToTop);
+          document.addEventListener("scroll", toggleScrollToTopButton);
 
-characterForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+          // Smooth Scrolling
+          const navLinks = document.querySelectorAll("nav a");
 
-  const nameInput = document.querySelector('#characterNameInput');
-  const imageInput = document.querySelector('#characterImageInput');
+          navLinks.forEach(function(navLink) {
+            navLink.addEventListener("click", function(e) {
+              e.preventDefault();
 
-  const character = {
-    name: nameInput.value,
-    image: imageInput.value,
-    additionalInfo: ""
-  };
+              const targetId = navLink.getAttribute("href").slice(1);
+              const targetSection = document.getElementById(targetId);
 
-  createCharacterButton(character);
-  characterForm.reset();
+              window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: "smooth",
+              });
+            });
+          });
 
-  const shouldAddAnother = confirm('Do you want to add another character?');
-  if (!shouldAddAnother) {
-    characterModal.style.display = 'none';
-  }
-});
+          // Add New Sections
+          const main = document.querySelector("main");
 
-function createCharacterButton(character) {
-  const charactersContainer = document.querySelector('#charactersContainer');
+          function addSection() {
+            const sectionCount = document.querySelectorAll("section").length;
+            const newSectionId = `section-${sectionCount + 1}`;
+            const newSectionTitle = `Section ${sectionCount + 1}`;
 
-  const button = document.createElement('button');
-  button.innerHTML = `<img src='${character.image}' alt='${character.name}' class="characterImage">`;
-  button.classList.add('characterBtn');
+            const newSection = document.createElement("section");
+            newSection.setAttribute("id", newSectionId);
+            newSection.setAttribute("data-nav", newSectionTitle);
+            newSection.innerHTML = `
+              <h2>${newSectionTitle}</h2>
+              <p>This is section ${sectionCount + 1}.</p>
+            `;
 
-  button.addEventListener("click", () => {
-    character.additionalInfo = prompt("Enter additional information about the character:");
-    // Update the DOM with the additional information
-    const infoParagraph = document.createElement("p");
-    infoParagraph.textContent = character.additionalInfo;
-    charactersContainer.appendChild(infoParagraph);
-  });
+            main.appendChild(newSection);
 
-  charactersContainer.appendChild(button);
-}
+            const newNavLink = document.createElement("a");
+            newNavLink.setAttribute("href", `#${newSectionId}`);
+            newNavLink.textContent = newSectionTitle;
 
-imageInput.addEventListener("paste", (event) => {
-  const clipboardData = event.clipboardData || window.Clipboard;
-  const pastedText = clipboardData.getData("text");
-  imageInput.value = pastedText;
-});
+            const newNavItem = document.createElement("li");
+            newNavItem.appendChild(newNavLink);
+            navList.appendChild(newNavItem);
+
+            observer.observe(newSection);
+          }
+
+          // Example: Add a new section when a button is clicked
+          const addButton = document.getElementById("add-button");
+          addButton.addEventListener("click", addSection);
+        });
