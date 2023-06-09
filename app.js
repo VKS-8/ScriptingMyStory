@@ -284,7 +284,12 @@ function createCharacterButton(character) {
   const characterList = document.querySelector('#characterList');
 
   const link = document.createElement('a');
-  link.setAttribute('href="#${character.name}" id="${character.name}" class="button').innerHTML = `${character.name}`;
+  link.setAttribute('href', "#${character.name}"),
+  link.setAttribute('id', "${character.name}"),
+  link.setAttribute('class', "button"),
+  link.setAttribute('target', "_blank"),
+  link.setAttribute('rel', "noopener noreferrer");
+  link.innerText = `${character.name}`;
   // link.classList.add('button');
 
   // link.addEventListener("click", () => {
@@ -298,6 +303,7 @@ function createCharacterButton(character) {
   characterList.appendChild(link);
 }
 
+// Allow user to paste file name into character image input field
 imageInput.addEventListener("paste", (event) => {
   const clipboardData = event.clipboardData || window.Clipboard;
   const pastedText = clipboardData.getData("text");
