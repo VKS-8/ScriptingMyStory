@@ -80,9 +80,11 @@
 //     }
 
 //   });
-// }
 
-// My attempt to rewrite this code for the wrapper layers
+
+
+
+// Parallax animation for wrapper layers in hero
 
 const foreground = document.querySelector('.foreground');
 console.log(foreground);
@@ -233,6 +235,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 }
 
+// Allow user to paste file name into character image input field
+let imageInput = document.querySelector('#characterImageInput');
+imageInput.addEventListener("paste", (event) => {
+  const clipboardData = event.clipboardData || window.Clipboard;
+  const pastedText = clipboardData.getData("text");
+  imageInput.value = pastedText;
+});
+
+
 // Append character button to page as user creates a new character
 // Add new character
 
@@ -282,14 +293,14 @@ characterForm.addEventListener('submit', (e) => {
 function createCharacterButton(character) {
   const characterList = document.querySelector('#characterList');
 
-  const link = document.createElement('a');
-  link.setAttribute('href', "#${character.name}"),
-  link.setAttribute('id', "${character.name}"),
-  link.setAttribute('class', "button"),
-  link.setAttribute('target', "_blank"),
-  link.setAttribute('rel', "noopener noreferrer");
-  link.innerText = `${character.name}`;
-  // link.classList.add('button');
+  const characterlink = document.createElement('a');
+  characterlink.setAttribute('href', "#${character.name}"),
+  characterlink.setAttribute('id', "${character.name}"),
+  characterlink.setAttribute('class', "button"),
+  characterlink.setAttribute('target', "_blank"),
+  characterlink.setAttribute('rel', "noopener noreferrer");
+  characterlink.innerText = `${character.name}`;
+
 
   // link.addEventListener("click", () => {
   //   character.additionalInfo = prompt("Enter additional information about the character:");
@@ -299,13 +310,98 @@ function createCharacterButton(character) {
   //   charactersContainer.appendChild(infoParagraph);
   // });
 
-  characterList.appendChild(link);
+  characterList.appendChild(characterlink);
 }
 
-// Allow user to paste file name into character image input field
-let imageInput = document.querySelector('#characterImageInput');
-imageInput.addEventListener("paste", (event) => {
-  const clipboardData = event.clipboardData || window.Clipboard;
-  const pastedText = clipboardData.getData("text");
-  imageInput.value = pastedText;
+// Append setting card to page as user creates a new setting
+// Add new setting
+
+const settingModal = document.querySelector('#settingModal');
+const addSettingButton = document.querySelector('#addSettingBtn');
+const settingForm = document.querySelector('#settingForm');
+const closeSettingButton = document.querySelector('.closeSetting')
+const addSettingImage = document.querySelector('settingImageInput')
+
+addSettingButton.addEventListener('click', () => {
+  settingModal.style.display = 'block';
 });
+
+closeSettingButton.addEventListener('click', () => {
+  settingModal.style.display = 'none';
+  settingForm.reset();
+});
+
+addAnotherButton.addEventListener('click', () => {
+  settingForm.reset();
+});
+
+settingForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const settingNameInput = document.querySelector('#settingNameInput');
+  const settingImageInput = document.querySelector('#settingImageInput');
+  const settingDescriptionInput = document.querySelector('#settingDescriptionInput');
+
+  const setting = {
+    name: settingNameInput.value,
+    image: settingImageInput.value,
+    description: settingDescriptionInput.value
+  };
+
+  addSettingButton(setting);
+  settingForm.reset();
+
+  settingNameInput.focus();
+
+  const shouldAddAnother = confirm('Do you want to add another setting?');
+  if (!shouldAddAnother) {
+    settingModal.style.display = 'none';
+  }
+});
+
+
+function addSettingCard(setting) {
+  const settingCards = document.querySelector('.settingCards');
+
+  const settingCardContent = document.querySelector('.settingCardContent');
+
+
+  const settinglink = document.createElement('a');
+  settinglink.setAttribute('href', "#${setting.name}"),
+  settinglink.setAttribute('id', "${setting.name}"),
+  settinglink.setAttribute('class', ""),
+  settinglink.setAttribute('target', "_blank"),
+  settinglink.setAttribute('rel', "noopener noreferrer");
+  settinglink.innerText = `${setting.name}`;
+
+
+  // link.addEventListener("click", () => {
+  //   character.additionalInfo = prompt("Enter additional information about the character:");
+  //   // Update the DOM with the additional information
+  //   const infoParagraph = document.createElement("p");
+  //   infoParagraph.textContent = character.additionalInfo;
+  //   charactersContainer.appendChild(infoParagraph);
+  // });
+
+  settingCards.appendChild(settingCardContent);
+}
+
+//Add placeholder text to the textarea in the modals
+
+const textarea = document.querySelector('#newentry');
+
+textarea.addEventListener('focus', function() {
+  if (this.classList.contains('placeholder')) {
+    this.textContent = '';
+    this.classList.remove('placeholder');
+  }
+});
+
+textarea.addEventListener('blur', function() {
+  if (this.textContent === '') {
+    this.textContent = 'Enter setting description';
+    this.classList.add('placeholder');
+  }
+});
+
+

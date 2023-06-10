@@ -76,7 +76,7 @@
           <a href="#character8" id="character8" class="button" target="_blank" rel="noopener noreferrer">Char8</a>
           </ul>
         </div>
-
+        <!-- Character Modal -->
         <div id="characterModal" class="modal">
           <div class="modalContent">
             <span class="close">
@@ -85,7 +85,7 @@
             <form id="characterForm">
               <label for="characterNameInput" ><!--change to screen reader only "Name required" -->
               </label>
-              <input type="text" id="characterNameInput" class="autofocusInput" placeholder="Enter character name" required autofocus>
+              <input type="text" id="characterNameInput" placeholder="Enter character name" required autofocus>
               <label for="characterImageInput" required><!--change to screen reader only "Add Image URL required"-->
                 <div class="toolTip">
                   <span class="toolTipText">
@@ -105,19 +105,40 @@
             </form>
           </div>
         </div>
-        <!-- Text area to write new note information for each category -->
-        <form>
-          <fieldset>
-            <div class="newNote">
+        <!-- Settings Modal will append to setting cards-->
+        <div id="settingModal" class="modal">
+          <div class="modalContent settingModalContent">
+            <span class="closeSetting close">
+              &times;
+            </span>
+            <form id="settingForm">
+              <label for="settingNameInput" ><!--change to screen reader only "Name required" -->
+              </label>
+              <input type="text" id="settingNameInput" placeholder="Enter setting location name" required autofocus>
+              <label for="settingImageInput" required><!--change to screen reader only "Add Image URL required"-->
+                <div class="toolTip">
+                  <span class="toolTipText">
+                    Add placeholder image if you don't have an image ready
+                  </span>
+                </div>
+              </label>
+              <input type="text" id="settingImageInput"  placeholder="Enter URL for setting image" title="Fix tooltip add placeholder image url if no image is ready yet">
               <textarea
                 id="newEntry"
-                class="inputTextArea"
-                name="newEntry"
-                placeholder="Enter new entry text then click appropriate button to add to the correct category">Enter new entry text then click appropriate button to add to the correct category
+                class="inputTextArea placeholder"
+                name="newEntry">
               </textarea>
-            </div>
-          </fieldset>
-        </form>
+              <div id="modalButtons">
+                <button type="submit" class="button">
+                  Add Setting
+                </button>
+                <button type="button" id="addAnotherBtn" class="button">
+                  Add Another setting
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
         <!-- Buttons append textArea text to select category -->
         <div id="sceneCategories">
           <button type="button"
@@ -152,27 +173,27 @@
         <ul class="characterCards">
         <div class="charCardContent">
           <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
-          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+          <a href="#character1" id="characterCard1" class="" title="Click for more details" target="_blank" rel="noopener noreferrer"><h4>Rose Lancaster</h4>
             </a>
         </div>
         <div class="charCardContent">
           <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
-          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+          <a href="#character1" id="characterCard1" class="" title="Click for more details" target="_blank" rel="noopener noreferrer"><h4>Rose Lancaster</h4>
             </a>
         </div>
         <div class="charCardContent">
           <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
-          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+          <a href="#character1" id="characterCard1" class="" title="Click for more details" target="_blank" rel="noopener noreferrer"><h4>Rose Lancaster</h4>
             </a>
         </div>
         <div class="charCardContent">
           <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
-          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+          <a href="#character1" id="characterCard1" class="" title="Click for more details" target="_blank" rel="noopener noreferrer"><h4>Rose Lancaster</h4>
             </a>
         </div>
         <div class="charCardContent">
           <img src="/images/Brushed/sean-kong-od-2xks9Alc-unsplash-1000px-edgeSmudge.jpg" alt="">
-          <a href="#character1" id="characterCard1" class="" title="Click for more details"><h4>Rose Lancaster</h4>
+          <a href="#character1" id="characterCard1" class="" title="Click for more details" target="_blank" rel="noopener noreferrer"><h4>Rose Lancaster</h4>
             </a>
         </div>
 
@@ -201,26 +222,26 @@
       <section id="settingCardsContainer">
         <h3 class="settingCardsSectionTitle">Scene Settings</h3>
         <ul class="settingCards">
-        <div class="settingCardContent">
-          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
-          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
-            </a>
-        </div>
-        <div class="settingCardContent">
-          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
-          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
-            </a>
-        </div>
-        <div class="settingCardContent">
-          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
-          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
-            </a>
-        </div>
-        <div class="settingCardContent">
-          <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="">
-          <a href="#setting1" id="settingCard1" class="" title="Click for more details"><h4>The Hill</h4>
-            </a>
-        </div>
+          <div class="settingCardContent">
+            <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="setting1">
+            <a href="#setting1" id="settingCard1" class="" title="Click for more details" target="_blank" rel="noopener noreferrer"><h4>The Hill</h4>
+              </a>
+          </div>
+          <div class="settingCardContent">
+            <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="setting2">
+            <a href="#setting2" id="settingCard2" class="" title="Click for more details" target="_blank" rel="noopener noreferrer"><h4>The Hill</h4>
+              </a>
+          </div>
+          <div class="settingCardContent">
+            <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="setting3">
+            <a href="#setting3" id="settingCard3" class="" title="Click for more details" target="_blank" rel="noopener noreferrer"><h4>The Hill</h4>
+              </a>
+          </div>
+          <div class="settingCardContent">
+            <img src="/images/james-todd-E9wD5lwKveM-unsplash.jpg" alt="setting4">
+            <a href="#setting4" id="settingCard4" class="" title="Click for more details" target="_blank" rel="noopener noreferrer"><h4>The Hill</h4>
+              </a>
+          </div>
 
         </ul>
         <div id="deleteEditArchiveBtns">
@@ -228,19 +249,19 @@
             type="button"
             id="deleteSettingBtn" class="button">
               Delete <br>
-              Character
+              Setting
           </button>
           <button
             type="button"
             id="editSettingBtn" class="button">
               Edit <br>
-              Character
+              Setting
           </button>
           <button
             type="button"
             id="archiveSettingBtn" class="button">
               Archive <br>
-              Character
+              Setting
           </button>
         </div>
       </section>

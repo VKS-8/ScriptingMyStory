@@ -333,6 +333,12 @@ transform: translateZ(-80px) scale(3);
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+#settingModal {
+  top: 50vh;
+  left: 10%;
+  width: 80%;
+}
+
 /* Content inside of modal */
 .modalContent {
   display: flex;
@@ -347,6 +353,11 @@ transform: translateZ(-80px) scale(3);
   max-width: 500px;
 }
 
+.settingModalContent {
+  width: 100%;
+  max-width: 1000px;
+}
+
 /* Modal closing X */
 .close {
   display: flex;
@@ -357,7 +368,7 @@ transform: translateZ(-80px) scale(3);
   margin: 0.75rem auto;
   background: #808080;
   color: #dbd9d9;
-  float: right;
+  /* float: right; */
   font-size: 28px;
   font-weight: bold;
 
@@ -383,24 +394,48 @@ form {
   "buttons";
 }
 
-#characterNameInput {
+#characterNameInput,
+#settingNameInput {
   grid-area: name;
   height: 3rem;
-  width: 80%;
+  width: 100%;
   margin: 0.5rem auto;
   padding: 0 0 0 2rem;
   border: 1px solid #808080;
   border-radius: 10px;
 }
 
-#characterImageInput {
+#characterImageInput,
+#settingImageInput {
   grid-area: image;
   height: 3rem;
-  width: 80%;
+  width: 100%;
   margin: 0.5rem auto;
   padding: 0 0 0 2rem;
   border: 1px solid #808080;
   border-radius: 10px;
+}
+
+/* Single text box to input information for each aspect of the story */
+
+textarea {
+  display: relative;
+  top: 0;
+  min-width: 900px;
+  height: 50vh;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: #808080;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.05rem;
+  border-radius: 10px;
+  border: 1px solid #808080;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+.placeholder {
+  color: gray;
 }
 
 #modalButtons {
@@ -441,35 +476,6 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Single text box to input information for each aspect of the story */
-
-fieldset {
-  width: 100%;
-  height: 50vh;
-  margin: 2rem auto;
-}
-
-.newNote {
-  display: flex;
-  width: 100%;
-  height: 50vh;
-}
-
-textarea {
-  display: relative;
-  top: 0;
-  width: 80%;
-  height: 50vh;
-  margin: 0 auto;
-  padding: 1.5rem;
-  color: #808080;
-  font-size: 2rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.05rem;
-  border-radius: 10px;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Sections for character cards, setting cards, description cards,
