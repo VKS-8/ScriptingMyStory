@@ -303,6 +303,7 @@ function createCharacterButton(character) {
 }
 
 // Allow user to paste file name into character image input field
+let imageInput = document.querySelector('#characterImageInput');
 imageInput.addEventListener("paste", (event) => {
   const clipboardData = event.clipboardData || window.Clipboard;
   const pastedText = clipboardData.getData("text");
