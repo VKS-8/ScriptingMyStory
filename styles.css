@@ -423,7 +423,7 @@ textarea {
   top: 0;
   min-width: 900px;
   height: 50vh;
-  margin: 0 auto;
+  margin: 0 auto 0.5rem;
   padding: 1.5rem;
   color: #808080;
   font-size: 2rem;
@@ -431,7 +431,6 @@ textarea {
   letter-spacing: 0.05rem;
   border-radius: 10px;
   border: 1px solid #808080;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
 .placeholder {

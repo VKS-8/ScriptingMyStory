@@ -386,6 +386,7 @@ function addSettingCard(setting) {
   settingCards.appendChild(settingCardContent);
 }
 
+// TODO determine why the placeholder isn't showing up
 //Add placeholder text to the textarea in the modals
 
 const textarea = document.querySelector('#newentry');
